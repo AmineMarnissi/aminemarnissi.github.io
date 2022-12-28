@@ -1,0 +1,201 @@
+
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TE-GAN: Thermal Image Enhancement using Generative Adversarial Network for Pedetrian Detection</title>
+<!--=================Meta tags==========================-->
+<meta name="robots" content="index,follow">
+<meta name="description"
+  content="We show that pre-trained Generative Adversarial Networks (GANs), e.g., StyleGAN, can be used as a latent bank to improve the restoration quality of large-factor image super-resolution (SR). While most existing SR approaches attempt to generate realistic textures through learning with adversarial loss, our method, Generative LatEnt bANk (GLEAN), goes beyond existing practices by directly leveraging rich and diverse priors encapsulated in a pre-trained GAN. But unlike prevalent GAN inversion methods that require expensive image-speciﬁc optimization at runtime, our approach only needs a single forward pass to generate the upscaled image. GLEAN can be easily incorporated in a simple encoder-bank-decoder architecture with multiresolution skip connections. Switching the bank allows the method to deal with images from diverse categories, e.g., cat, building, human face, and car. Images upscaled by GLEAN shows clear improvements in terms of ﬁdelity and texture faithfulness in comparison to existing methods.">
+<meta name="keywords" content="image, super resolution, restoration, GLEAN">
+<link rel="author" href="https://ckkelvinchan.github.io/projects/GLEAN">
+<!--=================js==========================-->
+<link href="./css.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../source/project.css" media="screen">
+<script src="./effect.js "></script>
+<!-- Latex -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+    });
+    </script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+<!--=================Google Analytics==========================-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129775907-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129775907-1');
+</script>
+</head>
+
+<body>
+<div id="content">
+  <div id="content-inner">
+    <div class="section head">
+      <h1>
+        <font color="Tomato">TE-GAN</font>: <font color="Tomato">T</font>hermal Image <font color="Tomato">E</font>nhancement using <font
+          color="Tomato">G</font>enerative <font color="Tomato">A</font>dversarial <font color="Tomato">N</font>etwork for Pedestrian Detection
+      </h1>
+      <!--=================Authors==========================-->
+      <div class="authors">
+        <a href="https://ckkelvinchan.github.io/" target="_blank">Mohamed Amine Marnissi</a> <sup>1</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://scholar.google.fr/citations?user=29Ol9DAAAAAJ&hl=fr" target="_blank">Hajer Fradi</a> <sup>1</sup> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://scholar.google.fr/citations?user=sn9GbmAAAAAJ&hl=fr" target="_blank">Anis Sahbani</a> <sup>2</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://scholar.google.fr/citations?user=pr-M7SEAAAAJ&hl=fr" target="_blank">Najoua Essoukri Ben Amara</a> <sup>1</sup>
+      </div>
+
+      <div class="affiliations ">
+        <sup>1</sup> LATIS-Laboratory of Advanced Technology and Intelligent Systems, 4023, Sousse, Tunisie;<br>
+        <sup>2</sup> Enova Robotics, 4023, Sousse, Tunisie; <br>
+      </div>
+      <!--=================Tabs==========================-->
+      <ul id="tabs">
+        <li><a href="#materials" name="#tab1">Materials</a></li>
+        <li><a href="#results" name="#tab2">Results</a></li>
+        <li><a href="#citation" name="#tab3">Citation</a></li>
+    </div>
+    <br>
+    <!--=================Teasers==========================-->
+    <div id="img_intro_examples" class="img_container">
+      <center><img src="..\images\icpr_conf.jpg" border="0" width="80%"></center>
+    </div>
+    <div class="section">
+      <p style="text-align:justify"><b>The TE-GAN framework</b>. we propose a new generative adversarial
+          network for thermal image enhancement task. Our proposed
+          architecture is composed of two main modules, the first one
+          is proposed to improve the contrast of the image. Since, by
+          augmenting the contrast, the noise will be gradually more
+          visible, we mitigate this effect by a second module that
+          aims at removing the underlying noise. Both models operate
+          instantly and simultaneously in an end-to-end architecture.</p>
+    </div>
+    <!--=================Highlights==========================-->
+    <div class="section abstract">
+      <h2>Highlights</h2>
+      <ol>
+        <li>In this paper we focus on the problem of pedestrians detection and localization from low resolution infrared cameras for surveillance applications.</li>
+        <li>The proposed architecture is composed of two modules with a post-processing step: contrast enhancement and denoising modules and an
+            edge restoration step. These different cues are merged together in one single architecture to complement each others and to further improve the overall quality.
+        </li>
+      </ol>
+    </div>
+    <!--=================Materials==========================-->
+    <div class="section materials" , id="materials">
+      <h2>Materials</h2>
+      <table width="100%" align="center" border=none cellspacing="0" cellpadding="30">
+        <tr>
+          <td width="40%">
+            <center>
+              <a href="https://ieeexplore.ieee.org/document/9412331" target="_blank" class="imageLink"><img
+                  src="../images/paper.png" , width="40%"></a><br><br>
+              <a href="https://ieeexplore.ieee.org/document/9412331" target="_blank">Paper</a>
+            </center>
+          </td>
+          <td width="40%" valign="middle">
+            <center>
+              <a href=" https://github.com/ckkelvinchan/GLEAN" target="_blank" class="imageLink"><img
+                  src="../images/icon_github2.png" , width="50%"></a><br><br>
+              <a href=" https://github.com/ckkelvinchan/GLEAN" target="_blank">Codes</a>
+            </center>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!--=================Abstract==========================-->
+    <div class="section abstract">
+      <h2>Abstract</h2>
+      <br>
+      <p style="text-align:justify">
+        Infrared imaging has recently played an important
+        role in a wide range of applications including video surveillance,
+        robotics and night vision. However, infrared cameras often suffer
+        from some limitations, essentially about low-contrast and blurred
+        details. These problems contribute to the loss of observation of
+        target objects in infrared images, which could limit the feasibility
+        of different infrared imaging applications. In this paper, we
+        mainly focus on the problem of pedestrian detection on thermal
+        images. Particularly, we emphasis the need for enhancing the
+        visual quality of images before performing the detection step.
+        To address that, we propose a novel thermal enhancement
+        architecture called TE-GAN based on Generative Adversarial
+        Network, and composed of two modules contrast enhancement
+        and denoising with a post-processing step for edge restoration in
+        order to improve the overall image quality. The effectiveness of
+        the proposed architecture is assessed by means of visual quality
+        metrics and better results are obtained compared to the original
+        thermal images and to the obtained results by other existing
+        enhancement methods. These results have been conducted on a
+        subset of KAIST dataset that we make available to encourage
+        research in this direction1. Using the same dataset, the impact of
+        the proposed enhancement architecture has been demonstrated
+        on the detection results by obtaining better performance with a
+        significant margin using YOLOv3 detector.
+      </p>
+    </div>
+
+    <!--=================Applications==========================-->
+    <div class="section" , id="results">
+      <h2>Results</h2>
+      <!--=================*******==========================-->
+      <h3>1. Intermediate Results</h3>
+      <div id="vid4" class="img_container">
+        <center>
+          <div class="leftView">
+            <div class="mask" style="width:70px;height:70px"></div>
+            <img class='small' src="../images/icpr_steps.jpg">
+          </div>
+        </center>
+      </div>
+      <br>
+      <!--=================*******==========================-->
+      <h3>2. Qualitative Results</h3>
+      <div id="vimeo90k" class="img_container">
+        <center>
+          <div class="leftView">
+            <div class="mask" style="width:70px;height:70px"></div>
+            <img class='small' src="..\images\icpr_qual_res.jpg">
+          </div>
+        </center>
+      </div>
+      <br>
+
+    </div>
+    <!--=================Citation==========================-->
+    <div class="section citation" , id="citation">
+      <h2>Citation</h2>
+      <div class="section bibtex">
+        <pre>@inproceedings{marnissi2021thermal,
+  title={Thermal Image Enhancement using Generative Adversarial Network for Pedestrian Detection},
+  author={Marnissi, Mohamed Amine and Fradi, Hajer and Sahbani, Anis and Amara, Najoua Essoukri Ben},
+  booktitle={2020 25th International Conference on Pattern Recognition (ICPR)},
+  pages={6509--6516},
+  year={2021},
+  organization={IEEE}}
+        </pre>
+      </div>
+    </div>
+    <!--=================Contact==========================-->
+    <div class="section contact">
+      <h2 id="contact">Contact</h2>
+      <p style="text-align:justify">If you have any question, please contact Mohamed Amine Marnissi at
+        <strong>mohamed.amine.marnissi@gmail.com</strong>.
+      </p>
+    </div>
+</body>
+
+</html>
