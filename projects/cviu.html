@@ -1,0 +1,196 @@
+
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<!--=================Meta tags==========================-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Improved domain adaptive object detector via adversarial feature learning</title>
+<meta name="robots" content="index,follow">
+<meta name="description"
+  content="In this paper, we mainly focus on the problem of pedestrian detection on thermal images. Particularly, we emphasis the need for enhancing the visual quality of images before performing the detection step. To address that, we propose a novel thermal enhancement architecture called TE-GAN based on Generative Adversarial Network, and composed of two modules contrast enhancement and denoising with a post-processing step for edge restoration in order to improve the overall image quality. The effectiveness of the proposed architecture is assessed by means of visual quality metrics and better results are obtained compared to the original thermal images and to the obtained results by other existing enhancement methods.">
+<meta name="keywords" content="pedestrian detection, person detection,  KAIST dataset, thermal enhancement, TE-GAN, object detection, thermal domain, thermal imaging">
+<link rel="author" href="https://aminemarnissi.github.io/">
+<!--=================js==========================-->
+<link href="./css.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../source/project.css" media="screen">
+<script src="./effect.js "></script>
+<!-- Latex -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+    });
+    </script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+<!--=================Google Analytics==========================-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129775907-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129775907-1');
+</script>
+</head>
+
+<body>
+<div id="content">
+  <div id="content-inner">
+    <div class="section head">
+      <h1>
+        <font color="Tomato">TV-UDA</font>: <font color="Tomato">T</font>hermal<font color="Tomato">V</font>isible <font
+          color="Tomato">U</font>nsupervised <font color="Tomato">D</font>omain <font color="Tomato">A</font>daptation
+      </h1>
+      <!--=================Authors==========================-->
+      <div class="authors">
+        <a href="https://scholar.google.com/citations?hl=fr&user=_u3ZOU4AAAAJ" target="_blank">Mohamed Amine Marnissi</a> <sup>1</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://scholar.google.fr/citations?user=29Ol9DAAAAAJ&hl=fr" target="_blank">Hajer Fradi</a> <sup>1</sup> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://scholar.google.fr/citations?user=sn9GbmAAAAAJ&hl=fr" target="_blank">Anis Sahbani</a> <sup>2</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://scholar.google.fr/citations?user=pr-M7SEAAAAJ&hl=fr" target="_blank">Najoua Essoukri Ben Amara</a> <sup>1</sup>
+      </div>
+
+      <div class="affiliations ">
+        <sup>1</sup> LATIS-Laboratory of Advanced Technology and Intelligent Systems, 4023, Sousse, Tunisie;<br>
+        <sup>2</sup> Enova Robotics, 4023, Sousse, Tunisie; <br>
+      </div>
+      <!--=================Tabs==========================-->
+      <ul id="tabs">
+        <li><a href="#materials" name="#tab1">Materials</a></li>
+        <li><a href="#results" name="#tab2">Results</a></li>
+        <li><a href="#citation" name="#tab3">Citation</a></li>
+    </div>
+    <br>
+    <!--=================Teasers==========================-->
+    <div id="img_intro_examples" class="img_container">
+      <center><img src="..\images\cviu_jr.jpg" border="0" width="80%"></center>
+    </div>
+    <div class="section">
+      <p style="text-align:justify"><b>The TE-GAN framework</b>. The proposed architecture of adaptive object detection via adversarial learning. The adaptation process
+        is performed by means of multi-level feature alignments guided by an uncertainty measure. It also incorporated consistency and contextual regularization modules.
+        </p>
+    </div>
+    <!--=================Highlights==========================-->
+    <div class="section abstract">
+      <h2>Highlights</h2>
+      <ol>
+        <li>The proposed adaptation architecture  has the advantage of  performing detection in the target domain at no additional annotation cost.</li>  
+
+        <li>The proposed adaptation scheme for detection has the advantage of  leveraging information from the labeled source domain  to deal with the gap in the target domain at no additional annotation cost.  %without supervision %in the target domain.</li>
+
+        <li>To cover different aspects of the  domain shift, multi-level feature alignments guided by an uncertainty measure are performed. </li>
+
+        <li>The adaptation process also incorporates consistency and contextual regularization modules.</li>
+
+        <li>To cover different aspects of the  domain shift, we propose in this paper a more architecture compared to the state-of-the-art methods, by performing  multi-level feature alignments guided by an uncertainty measure.  The adaptation process also incorporates consistency and contextual regularization modules.</li>
+
+        <li>By means of tests, the adaptability power of the proposed detector  is proven in different domain shift scenarios.</li>
+      </ol>
+    </div>
+    <!--=================Materials==========================-->
+    <div class="section materials" , id="materials">
+      <h2>Materials</h2>
+      <table width="100%" align="center" border=none cellspacing="0" cellpadding="30">
+        <tr>
+          <td width="40%">
+            <center>
+              <a href="https://www.sciencedirect.com/science/article/pii/S1077314223000401#dfig1" target="_blank" class="imageLink"><img
+                  src="../images/paper.png" , width="40%"></a><br><br>
+            </center>
+          </td>
+          <td width="40%" valign="middle">
+            <center>
+              <a href="https://github.com/AmineMarnissi/UDAT" target="_blank" class="imageLink"><img
+                  src="../images/icon_github2.png" , width="50%"></a><br><br>
+            </center>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!--=================Abstract==========================-->
+    <div class="section abstract">
+      <h2>Abstract</h2>
+      <br>
+      <p style="text-align:justify">
+        Unsupervised domain adaptation is a promising solution to adapt models to new domains or environments at no additional annotation cost.
+        Such adaptation strategy has been investigated for detection to cope with the domain shift along the detection pipeline.
+        To improve the transferability of object detectors between source and target domains, we propose in this paper to perform multi-level feature alignments via adversarial learning.
+        The alignment process is guided by an uncertainty measure to adapt weights of well-aligned and misaligned target samples, accordingly.
+        Furthermore, the proposed approach includes a consistency regularization to enforce the coherency between image and instance level domain classifiers.
+        We also emphasize the need for leveraging contextual information that captures the scene structure for complementary aspects and to further improve the adversarial training process. These adaptation components are integrated into Faster R-CNN architecture at different levels.
+        The resulting proposed adaptive detector has the advantage of covering different aspects of the domain shift in order to improve the overall performance.
+        Extensive experiments of different domain shift scenarios demonstrate the effectiveness of our proposed adaptation scheme by obtaining better results compared to the baseline detector and to the current state-of-the-art adaptive detectors.
+      </p>
+    </div>
+
+    <!--=================Applications==========================-->
+    <div class="section" , id="results">
+      <h2>Results</h2>
+      <!--=================*******==========================-->
+      <h3>1. Qualitative Results</h3>
+      <div id="vimeo90k" class="img_container">
+        <center>
+          <div class="leftView">
+            <div class="mask" style="width:70px;height:70px"></div>
+            <img class='small' src="..\images\cviu_detection.jpg">
+          </div>
+        </center>
+      </div>
+      <br>
+          <!--=================*******==========================-->
+      <h3>2. GradCam gradient visualization. </h3>
+      <div id="vid4" class="img_container">
+        <center>
+          <div class="leftView">
+            <div class="mask" style="width:70px;height:70px"></div>
+            <img class='small' src="../images/gradcam.jpg">
+          </div>
+        </center>
+      </div>
+      <br>
+      <!--=================*******==========================-->
+      <h3>3. Feature visualization. </h3>
+      <div id="vid4" class="img_container">
+        <center>
+          <div class="leftView">
+            <div class="mask" style="width:10px;height:10px"></div>
+            <img class='small' src="../images/features_vis.jpg">
+          </div>
+        </center>
+      </div>
+      <br>
+    <!--=================Citation==========================-->
+    <div class="section citation" , id="citation">
+      <h2>Citation</h2>
+      <div class="section bibtex">
+        <pre>@article{marnissi2023improved,
+          title={Improved domain adaptive object detector via adversarial feature learning},
+          author={Marnissi, Mohamed Amine and Fradi, Hajer and Sahbani, Anis and Amara, Najoua Essoukri Ben},
+          journal={Computer Vision and Image Understanding},
+          pages={103660},
+          year={2023},
+          publisher={Elsevier}
+        }
+        </pre>
+      </div>
+    </div>
+    <!--=================Contact==========================-->
+    <div class="section contact">
+      <h2 id="contact">Contact</h2>
+      <p style="text-align:justify">If you have any question, please contact Mohamed Amine Marnissi at
+        <strong>mohamed.amine.marnissi@gmail.com</strong>.
+      </p>
+    </div>
+</body>
+
+</html>
