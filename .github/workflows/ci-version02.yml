@@ -1,0 +1,30 @@
+name: CI for version0.2
+
+on:
+  push:
+    branches:
+      - version0.2
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - '*.md'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run basic HTML validation
+        run: |
+          sudo apt update
+          sudo apt install -y tidy
+          tidy -errors -quiet *.html || true
+
+      # تنجم تزيد tests أخرى، linters، أو حتى build
+
+      - name: Done
+        run: echo "Version 0.2 checked!"
