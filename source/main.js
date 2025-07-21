@@ -14,57 +14,106 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Language toggle functionality
 function initLanguageToggle() {
-    const languageToggle = document.getElementById('toggleLanguage');
-    if (!languageToggle) return;
+  const languageToggles = document.querySelectorAll('.toggle-language');
+  if (!languageToggles.length) return;
 
-    const storedLang = localStorage.getItem('preferred-language') || 'en';
-    switchLanguage(storedLang);
+  const storedLang = localStorage.getItem('preferred-language') || 'en';
+  switchLanguage(storedLang);
 
-    languageToggle.addEventListener('click', function () {
-        const currentLang = document.documentElement.getAttribute('lang') || 'en';
-        const newLang = currentLang === 'en' ? 'fr' : 'en';
-        switchLanguage(newLang);
-        localStorage.setItem('preferred-language', newLang);
+  languageToggles.forEach(languageToggle => {
+    languageToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      const currentLang = document.documentElement.getAttribute('lang') || 'en';
+      const newLang = currentLang === 'en' ? 'fr' : 'en';
+      switchLanguage(newLang);
+      localStorage.setItem('preferred-language', newLang);
     });
+  });
 
-    function switchLanguage(lang) {
-        document.documentElement.setAttribute('lang', lang);
-        document.querySelectorAll('[data-en][data-fr]').forEach(el => {
-            el.textContent = el.getAttribute(`data-${lang}`);
-        });
-        languageToggle.textContent = lang === 'en' ? 'Français' : 'English';
-    }
+  function switchLanguage(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-en][data-fr]').forEach(el => {
+      el.textContent = el.getAttribute(`data-${lang}`);
+    });
+  }
 }
+
 
 // Dark/Light mode toggle functionality
 function initDarkModeToggle() {
-    const darkModeToggle = document.getElementById('toggleMode');
-    if (!darkModeToggle) return;
+  const darkModeToggles = document.querySelectorAll('.toggle-mode');
+  if (!darkModeToggles.length) return;
 
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('theme');
+  const isLightMode = savedTheme === 'light';
 
-    if (savedTheme) {
-        document.body.classList.toggle('light-mode', savedTheme === 'light');
-        updateDarkModeIcon(savedTheme === 'light');
-    } else if (prefersDarkMode) {
-        document.body.classList.remove('light-mode');
-        updateDarkModeIcon(false);
-    } else {
-        document.body.classList.add('light-mode');
-        updateDarkModeIcon(true);
-    }
+  applyTheme(isLightMode);
 
-    darkModeToggle.addEventListener('click', function () {
-        document.body.classList.toggle('light-mode');
-        const isLightMode = document.body.classList.contains('light-mode');
-        localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
-        updateDarkModeIcon(isLightMode);
+  darkModeToggles.forEach(toggle => {
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      const currentlyLight = document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', currentlyLight ? 'light' : 'dark');
+      applyTheme(currentlyLight);
     });
+  });
 }
 
+function applyTheme(isLightMode) {
+  const body = document.body;
+  const navbar = document.querySelector('.navbar');
+  const settingsBtn = document.getElementById('settingsDropdown');
+
+  // 1. Toggle light-mode class on <body>
+  if (isLightMode) {
+    body.classList.add('light-mode');
+  } else {
+    body.classList.remove('light-mode');
+  }
+
+  // 2. Update navbar color scheme
+  if (navbar) {
+    navbar.classList.toggle('navbar-light', isLightMode);
+    navbar.classList.toggle('navbar-dark', !isLightMode);
+  }
+
+  // 3. Update settings button style (desktop)
+  if (settingsBtn) {
+    settingsBtn.classList.remove('btn-outline-light', 'btn-outline-dark');
+    settingsBtn.classList.add(isLightMode ? 'btn-outline-dark' : 'btn-outline-light');
+  }
+
+  // 4. Update toggler icon color via class (optional)
+  const togglerIcon = document.querySelector('.navbar-toggler-icon');
+  if (togglerIcon) {
+    togglerIcon.style.backgroundImage = isLightMode
+      ? "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E\")"
+      : "";
+  }
+
+  // 5. Update icon and label for all toggles
+  document.querySelectorAll('.toggle-mode').forEach(toggle => {
+    toggle.innerHTML = isLightMode
+      ? '<i class="fas fa-moon me-2"></i><span>Dark Mode</span>'
+      : '<i class="fas fa-sun me-2"></i><span>Light Mode</span>';
+    toggle.setAttribute('aria-label', isLightMode ? 'Switch to dark mode' : 'Switch to light mode');
+  });
+}
+
+
 function updateDarkModeIcon(isLightMode) {
-    const darkModeToggle = document.getElementById('toggleMode');
+  const toggles = document.querySelectorAll('.toggle-mode');
+  toggles.forEach(toggle => {
+    toggle.innerHTML = isLightMode
+      ? '<i class="fas fa-moon me-2"></i><span>Dark Mode</span>'
+      : '<i class="fas fa-sun me-2"></i><span>Light Mode</span>';
+    toggle.setAttribute('aria-label', isLightMode ? 'Switch to dark mode' : 'Switch to light mode');
+  });
+}
+
+
+function updateDarkModeIcon(isLightMode) {
+    const darkModeToggle = document.getElementById('.toggle-mode');
     if (!darkModeToggle) return;
     darkModeToggle.innerHTML = isLightMode ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
     darkModeToggle.setAttribute('aria-label', isLightMode ? 'Switch to dark mode' : 'Switch to light mode');

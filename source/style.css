@@ -1,12 +1,15 @@
 /* 
-   Main styles for Mohamed Amine Marnissi's personal website
+   Optimized styles for Mohamed Amine Marnissi's personal website
    Enhanced CSS with comprehensive dynamic color variables system
+   - Reduced redundancy and improved organization
+   - Better performance through consolidated selectors
+   - Maintained all original variable names for compatibility
 */
 
 /* ===== Color Theme Variables ===== */
 :root {
   /* Primary Brand Colors - Main color to change */
-  --primary-hue: 177; /* Change this value to adjust the entire color scheme */
+  --primary-hue: 177;
   --primary-saturation: 100%;
   --primary-lightness: 32%;
 
@@ -44,7 +47,7 @@
   --accent-success: #a19a00;
   --accent-danger: #dc3545;
   
-  /* Functional Variables (mapping semantic meanings to color values) */
+  /* Functional Variables */
   --text-dark: var(--neutral-dark);
   --text-light: var(--neutral-light);
   --text-mut: var(--neutral-medium);
@@ -80,6 +83,7 @@ body:not(.light-mode) {
   background-color: var(--dark-theme-bg);
 }
 
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-bottom: 1rem;
@@ -121,36 +125,36 @@ img {
   border-color: var(--primary-base);
 }
 
-.btn-out-primary:hover {
-  background-color: var(--primary-base);
-  border-color: var(--primary-base);
-  color: white;
-}
+.btn-out-primary:hover,
 .btn-out-primary.active {
   background-color: var(--primary-base);
   border-color: var(--primary-base);
   color: white;
 }
+
 .btn-out-info {
   color: var(--secondary-light);
   border-color: var(--secondary-light);
 }
+
 .btn-out-info:hover {
   background-color: var(--secondary-base);
   border-color: var(--secondary-base);
   color: white;
 }
+
 .btn-outline-success {
   color: var(--accent-success);
   border-color: var(--accent-success);
 }
+
 .btn-outline-success:hover {
   background-color: var(--accent-success);
   border-color: var(--accent-success);
   color: white;
 }
 
-/* ===== Header & Navigation ===== */
+/* ===== Navigation Styles ===== */
 .navbar {
   box-shadow: var(--box-shadow);
   transition: var(--transition);
@@ -184,7 +188,7 @@ body:not(.light-mode) .navbar {
   transform: scale(1.05);
 }
 
-/* Nav links */
+/* Navigation Links */
 .navbar-nav .nav-link {
   font-weight: 500;
   padding: 0.5rem 1rem;
@@ -209,7 +213,7 @@ body:not(.light-mode) .nav-link.active {
   background-color: var(--primary-dark);
 }
 
-/* Active nav link indicator */
+/* Nav link underline indicator */
 .navbar-nav .nav-link::after {
   content: '';
   position: absolute;
@@ -227,7 +231,7 @@ body:not(.light-mode) .nav-link.active {
   width: 70%;
 }
 
-/* Light mode nav links */
+/* Light mode navigation adjustments */
 body.light-mode .navbar-nav .nav-link,
 body.light-mode .toggle-btn,
 body.light-mode .lang-btn {
@@ -239,7 +243,7 @@ body.light-mode .navbar-nav .nav-link.active {
   color: #000;
 }
 
-/* Mode toggle and language buttons */
+/* Control buttons (theme toggle, language) */
 #dark-mode-toggle, 
 .toggle-btn,
 .lang-btn {
@@ -304,7 +308,7 @@ body.light-mode .dropdown-item:hover {
   color: #000;
 }
 
-/* ===== Sections ===== */
+/* ===== Layout Sections ===== */
 section {
   padding: 1rem 0;
   transition: var(--transition);
@@ -327,7 +331,7 @@ body:not(.light-mode) .section-title {
   margin-right: 0.5rem;
 }
 
-/* Animation for sections */
+/* Section animations */
 .section-hidden {
   opacity: 0;
   transform: translateY(20px);
@@ -438,6 +442,8 @@ body:not(.light-mode) .timeline-item {
   padding: 0.25rem 0.75rem;
   border-radius: var(--border-radius);
   font-weight: bold;
+  font-size: 0.875rem;
+  white-space: nowrap;
 }
 
 .timeline-item:before {
@@ -464,7 +470,7 @@ body:not(.light-mode) .timeline-item {
   transform: translateX(0);
 }
 
-/* ===== Cards ===== */
+/* ===== Card Components ===== */
 .card {
   border: none;
   border-radius: var(--border-radius);
@@ -509,7 +515,12 @@ body:not(.light-mode) .card-subtitle {
   transform: translateY(0);
 }
 
-/* Service Cards */
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Specialized card types */
 .service-card {
   text-align: center;
   padding: 2rem 1rem;
@@ -526,7 +537,6 @@ body:not(.light-mode) .card-subtitle {
   transform: scale(1.2);
 }
 
-/* Patent Card */
 .patent-card {
   background-color: var(--primary-faded);
 }
@@ -540,7 +550,6 @@ body:not(.light-mode) .patent-card {
   color: var(--accent-warning);
 }
 
-/* Blog Card */
 .blog-card {
   background-color: var(--light-theme-surface);
 }
@@ -557,14 +566,17 @@ body:not(.light-mode) .blog-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
 .glass-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
 }
+
 .glass-card i {
-  color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+  color: var(--primary-base);
 }
-/* ===== Social Links ===== */
+
+/* ===== Social & Icon Links ===== */
 .social-links {
   display: flex;
   gap: 1rem;
@@ -590,7 +602,24 @@ body:not(.light-mode) .blog-card {
   text-decoration: none;
 }
 
-/* ===== Awards Styles ===== */
+.icon-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+  margin-right: 8px;
+  transition: all 0.2s;
+}
+
+.icon-links a:hover {
+  background-color: var(--primary-base);
+  color: white;
+}
+
+/* ===== Awards & Education ===== */
 .award-highlight {
   border-left: 4px solid var(--primary-base);
   background-color: var(--primary-faded);
@@ -622,7 +651,6 @@ body:not(.light-mode) .award-highlight {
   transform: scale(1.05);
 }
 
-/* ===== Education Styles ===== */
 .education-icon {
   display: flex;
   align-items: center;
@@ -639,8 +667,9 @@ body:not(.light-mode) .award-highlight {
   margin-top: 1rem;
 }
 
-/* ===== Form Styling ===== */
-.form-control, .form-select {
+/* ===== Forms ===== */
+.form-control, 
+.form-select {
   border-radius: var(--border-radius);
   padding: 0.75rem 1rem;
   border: 1px solid #ced4da;
@@ -654,7 +683,8 @@ body:not(.light-mode) .form-select {
   color: var(--text-light);
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus, 
+.form-select:focus {
   border-color: var(--primary-base);
   box-shadow: 0 0 0 0.2rem hsla(var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 0.25);
 }
@@ -675,18 +705,22 @@ body:not(.light-mode) .form-select {
   margin-bottom: 0.5rem;
   border-radius: 50rem;
 }
+
 .badge-primary {
   background-color: var(--secondary-dark);
   color: white;
 }
+
 .badge-secondary {
   background-color: var(--secondary-base);
   color: white;
 }
+
 .badge-danger {
   background-color: var(--secondary-light);
   color: white;
 }
+
 /* ===== Footer ===== */
 footer {
   background-color: var(--light-theme-bg);
@@ -710,16 +744,6 @@ body:not(.light-mode) footer {
   margin-bottom: 1.5rem;
 }
 
-/* ===== Offcanvas Styles ===== */
-.offcanvas-body pre {
-  background-color: var(--neutral-light);
-  padding: 1rem;
-  border-radius: var(--border-radius);
-  font-family: monospace;
-  font-size: 0.9rem;
-  white-space: pre-wrap;
-}
-
 /* ===== Utility Classes ===== */
 .text-primary {
   color: var(--primary-base) !important;
@@ -733,227 +757,6 @@ body:not(.light-mode) footer {
   color: var(--text-mut) !important;
 }
 
-/* ===== Media Queries ===== */
-@media (max-width: 991.98px) {
-  .toggle-btn,
-  .lang-btn {
-    width: auto;
-    height: auto;
-    border-radius: 6px;
-    padding: 8px 12px;
-    margin-bottom: 10px;
-  }
-  
-  #toggleModeMobile,
-  #toggleLanguageMobile {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .navbar-collapse {
-    padding: 1rem 0;
-  }
-  
-  .navbar-nav .nav-link::after {
-    display: none;
-  }
-  
-  .navbar-nav .nav-link {
-    padding: 0.8rem 0;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Navigation */
-  .logo-img {
-    max-height: 36px;
-    width: auto;
-  }
-  
-  .navbar-collapse {
-    text-align: left;
-  }
-  
-  .navbar-nav .nav-link {
-    padding-left: 1rem;
-  }
-  
-  .dropdown-menu {
-    background-color: #121212;
-  }
-  
-  /* Timeline */
-  .timeline {
-    padding-left: 1.5rem;
-    margin-left: 0;
-  }
-  
-  .timeline-date {
-    position: static;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-  }
-  
-  .timeline-item:before {
-    left: -1.75rem;
-  }
-  
-  .service-card {
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Header */
-  .profile-image-container {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .header-content {
-    text-align: center;
-    padding-left: 0;
-    margin-top: 1.5rem;
-  }
-  
-  .social-links {
-    justify-content: center;
-  }
-  
-  /* Mobile toggle buttons */
-  #toggleModeMobile,
-  #toggleLanguageMobile {
-    font-size: 0.9rem;
-    padding: 0.4rem 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .section-title {
-    text-align: center;
-    justify-content: center;
-  }
-  
-  .timeline:before {
-    left: 0.5rem;
-  }
-  
-  .timeline-item:before {
-    left: -1.25rem;
-  }
-  
-  .timeline-item {
-    padding: 0.75rem;
-  }
-}
-
-/* ===== Print Styles ===== */
-@media print {
-  body {
-    padding-top: 0;
-    background-color: white !important;
-    color: black !important;
-  }
-  
-  .navbar, .btn, #contact, footer, iframe {
-    display: none !important;
-  }
-  
-  a {
-    text-decoration: none !important;
-    color: black !important;
-  }
-  
-  .card, .timeline-item {
-    break-inside: avoid;
-    box-shadow: none !important;
-    border: 1px solid #ddd !important;
-  }
-  
-  .section-title {
-    color: black !important;
-    border-bottom-color: black !important;
-  }
-}
-
-/* Better responsiveness for all sections */
-@media (max-width: 767px) {
-  .header-section .profile-image {
-      max-width: 180px;
-      margin: 0 auto;
-  }
-  
-  .header-content h1 {
-      font-size: 2rem;
-  }
-  
-  .header-actions {
-      flex-direction: column;
-      align-items: stretch;
-  }
-  
-  .header-actions .btn {
-      margin-bottom: 10px;
-      width: 100%;
-  }
-  
-  .timeline-date {
-      position: relative;
-      margin-bottom: 10px;
-      margin-right: 0;
-      display: block;
-      font-weight: bold;
-  }
-  
-  .timeline-item {
-      padding-left: 20px;
-  }
-  
-  .publication-item {
-      flex-direction: column;
-  }
-  
-  .publication-item .col-md-3 {
-      margin-bottom: 15px;
-      text-align: center;
-  }
-  
-  .publication-item img {
-      max-width: 200px;
-      margin: 0 auto;
-  }
-  
-  .award-gallery .card {
-      margin-bottom: 20px;
-  }
-  
-  /* Better handling of filters */
-  .btn-group.mb-4 {
-      flex-wrap: wrap;
-      gap: 5px;
-  }
-  
-  .btn-group.mb-4 .btn {
-      margin-bottom: 5px;
-      flex: 1 0 auto;
-  }
-}
-
-/* Fix image aspect ratios */
-.card-img-top {
-  height: 200px;
-  object-fit: cover;
-}
-
-/* Improve bibtex entries readability */
-pre {
-  white-space: pre-wrap;
-  word-break: break-word;
-  background-color: #f8f9fa;
-  padding: 15px;
-  border-radius: 5px;
-}
-
-/* Fix publication items spacing */
 .publication-item {
   padding: 15px;
   border-radius: 8px;
@@ -964,22 +767,21 @@ pre {
   background-color: rgba(0,0,0,0.03);
 }
 
-/* Improved icon links */
-.icon-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
   background-color: #f8f9fa;
-  margin-right: 8px;
-  transition: all 0.2s;
+  padding: 15px;
+  border-radius: 5px;
 }
 
-.icon-links a:hover {
-  background-color: var(--primary-base);
-  color: white;
+.offcanvas-body pre {
+  background-color: var(--neutral-light);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  font-family: monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
 }
 
 /* ===== Theme Switcher ===== */
@@ -1018,4 +820,330 @@ body:not(.light-mode) .theme-switcher {
 .color-option.active {
   border-color: white;
   box-shadow: 0 0 0 2px var(--primary-base);
+}
+
+/* ===== Responsive Design ===== */
+
+/* Large tablets */
+@media (max-width: 991.98px) {
+  .toggle-btn,
+  .lang-btn {
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+  }
+  
+  .navbar-collapse {
+    padding: 1rem 0;
+  }
+  
+  .navbar-nav .nav-link::after {
+    display: none;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.8rem 0;
+  }
+  
+  /* Timeline adjustments */
+  .timeline {
+    padding-left: 1.5rem;
+    margin-left: 0.5rem;
+  }
+  
+  .timeline-date {
+    left: -4rem;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .timeline-item:before {
+    left: -2.25rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .logo-img {
+    max-height: 36px;
+    width: auto;
+  }
+  
+  .navbar-collapse {
+    text-align: left;
+  }
+  
+  .navbar-nav .nav-link {
+    padding-left: 1rem;
+  }
+  
+  .dropdown-menu {
+    background-color: #121212;
+  }
+  
+  .service-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-image-container {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .header-content {
+    text-align: center;
+    padding-left: 0;
+    margin-top: 1.5rem;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  
+  /* Timeline mobile layout */
+  .timeline {
+    padding-left: 0;
+    margin-left: 0;
+    padding-top: 1rem;
+  }
+  
+  .timeline:before {
+    left: 1rem;
+  }
+  
+  .timeline-item {
+    margin-left: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .timeline-date {
+    position: static;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+  }
+  
+  .timeline-item:before {
+    left: -1.75rem;
+    top: 1rem;
+  }
+  
+  .header-section .profile-image {
+    max-width: 180px;
+    margin: 0 auto;
+  }
+  
+  .header-content h1 {
+    font-size: 2rem;
+  }
+  
+  .header-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .header-actions .btn {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .publication-item {
+    flex-direction: column;
+  }
+  
+  .publication-item .col-md-3 {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .publication-item img {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  .award-gallery .card {
+    margin-bottom: 20px;
+  }
+  
+  .btn-group.mb-4 {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .btn-group.mb-4 .btn {
+    margin-bottom: 5px;
+    flex: 1 0 auto;
+  }
+}
+
+/* Small phones */
+@media (max-width: 576px) {
+  .section-title {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .timeline {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  
+  .timeline:before {
+    left: 0.5rem;
+  }
+  
+  .timeline-item {
+    margin-left: 1.5rem;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .timeline-item:before {
+    left: -1.25rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    top: 0.75rem;
+  }
+  
+  .timeline-date {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Extra small screens - ultra compact */
+@media (max-width: 400px) {
+  .timeline-item {
+    margin-left: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .timeline:before {
+    left: 0.25rem;
+  }
+  
+  .timeline-item:before {
+    left: -1rem;
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+  
+  .timeline-date {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.4rem;
+  }
+}
+
+/* ===== ALTERNATIVE MOBILE TIMELINE LAYOUT ===== */
+/* You can add this class to your timeline container for better mobile experience */
+.timeline-responsive {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .timeline-responsive {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  
+  .timeline-responsive:before {
+    display: none;
+  }
+  
+  .timeline-responsive .timeline-item {
+    margin-left: 0;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-left: 4px solid var(--primary-base);
+    position: relative;
+  }
+  
+  .timeline-responsive .timeline-item:before {
+    display: none;
+  }
+  
+  .timeline-responsive .timeline-date {
+    position: static;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    background-color: var(--primary-base);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+}
+
+/* ===== FIXES FOR EXISTING MEDIA QUERIES ===== */
+
+/* Update the existing 768px media query */
+@media (max-width: 768px) {
+  /* Keep existing styles and add these fixes */
+  
+  /* Better timeline spacing */
+  .timeline {
+    padding-left: 1.5rem;
+    margin-left: 0;
+  }
+  
+  .timeline:before {
+    left: 0.5rem; /* Move line closer to left */
+  }
+  
+  .timeline-date {
+    position: static;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem; /* Slightly smaller font */
+    max-width: 100%; /* Prevent overflow */
+  }
+  
+  .timeline-item {
+    margin-left: 1.5rem; /* Reduce left margin */
+    padding: 1rem; /* Consistent padding */
+  }
+  
+  .timeline-item:before {
+    left: -1.75rem;
+    width: 0.75rem; /* Smaller circle */
+    height: 0.75rem;
+  }
+}
+
+/* Better 576px breakpoint */
+@media (max-width: 576px) {
+  .timeline {
+    padding-left: 1rem;
+    margin-left: 0;
+  }
+  
+  .timeline:before {
+    left: 0.25rem;
+  }
+  
+  .timeline-item {
+    margin-left: 1rem;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .timeline-item:before {
+    left: -1.25rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    top: 0.5rem;
+  }
+  
+  .timeline-date {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.75rem;
+  }
 }
