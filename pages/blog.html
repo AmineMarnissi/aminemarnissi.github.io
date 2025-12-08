@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog | Mohamed Amine Marnissi</title>
+    <meta name="description"
+        content="Blog of Mohamed Amine Marnissi - Insights on AI, Computer Vision, and Thermal Imaging.">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../source/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top mb-4">
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/logo-amine.webp" alt="Logo" class="logo-img" loading="lazy">
+            </a>
+
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- Navigation links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#awards" data-en="Awards"
+                            data-fr="Récompenses">Awards</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#education" data-en="Education"
+                            data-fr="Formation">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#publications" data-en="Publications"
+                            data-fr="Publications">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#projects" data-en="Projects"
+                            data-fr="Projets">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#datasets" data-en="Datasets"
+                            data-fr="Jeux de données">Datasets</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" data-en="Experience" data-fr="Expérience">
+                            Experience
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../index.html#experience" data-en="Work Experience"
+                                    data-fr="Expérience professionnelle">Work Experience</a></li>
+                            <li><a class="dropdown-item" href="../index.html#teaching" data-en="Teaching"
+                                    data-fr="Enseignement">Teaching</a></li>
+                            <li><a class="dropdown-item" href="../index.html#supervision" data-en="Supervision"
+                                    data-fr="Encadrement">Supervision</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#patents" data-en="Patents"
+                            data-fr="Brevets">Patents</a></li>
+                    <li class="nav-item"><a class="nav-link" href="freelance.html" data-en="Services"
+                            data-fr="Services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html" data-en="Blog"
+                            data-fr="Blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact" data-en="Contact"
+                            data-fr="Contact">Contact</a></li>
+                </ul>
+                <!-- Settings dropdown for large screens -->
+                <div class="dropdown d-none d-lg-block position-absolute top-0 end-0 m-3">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="settingsDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+                        <li>
+                            <a class="dropdown-item toggle-mode" href="#">
+                                <i class="fas fa-moon me-2"></i><span data-en="Dark Mode" data-fr="Mode Sombre">Dark
+                                    Mode</span>
+                            </a>
+                            <a class="dropdown-item toggle-language" href="#">
+                                <i class="fa fa-globe me-2"></i><span data-en="Language"
+                                    data-fr="Langue">Language</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Settings -->
+                <div class="d-block d-lg-none mt-3 p-3">
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <button class="btn btn-outline-secondary w-100 toggle-mode" aria-label="Toggle Dark Mode">
+                                <i class="fas fa-moon me-2"></i>
+                                <span data-en="Dark Mode" data-fr="Mode Sombre">Dark Mode</span>
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-outline-secondary w-100 toggle-language"
+                                aria-label="Toggle Language">
+                                <i class="fa fa-language me-2"></i>
+                                <span data-en="Language" data-fr="Langue">Language</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <section id="blog-posts" class="my-5">
+            <h1 class="text-center mb-5" data-en="Blog" data-fr="Blog">Blog</h1>
+
+            <div class="row g-4">
+                <!-- Placeholder Post 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">AI Research</span>
+                            <h5 class="card-title" data-en="Understanding Thermal Image Enhancement"
+                                data-fr="Comprendre l'Amélioration des Images Thermiques">Understanding Thermal Image
+                                Enhancement</h5>
+                            <p class="card-text text-muted"
+                                data-en="A deep dive into how GANs can be used to improve the quality of thermal imagery for better object detection."
+                                data-fr="Une plongée profonde dans la façon dont les GAN peuvent être utilisés pour améliorer la qualité de l'imagerie thermique.">
+                                A deep dive into how GANs can be used to improve the quality of thermal imagery for
+                                better object detection.</p>
+                            <a href="posts/thermal_enhancement.html"
+                                class="btn btn-outline-primary btn-sm stretched-link" data-en="Read More"
+                                data-fr="Lire la suite">Read More</a>
+                        </div>
+                        <div class="card-footer text-muted small">
+                            <i class="far fa-calendar-alt me-1"></i> Dec 8, 2025
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder Post 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Tutorial</span>
+                            <h5 class="card-title" data-en="Getting Started with Computer Vision"
+                                data-fr="Débuter avec la Vision par Ordinateur">Getting Started with Computer Vision
+                            </h5>
+                            <p class="card-text text-muted"
+                                data-en="Essential tools and libraries you need to start your journey in computer vision."
+                                data-fr="Outils et bibliothèques essentiels pour commencer votre parcours en vision par ordinateur.">
+                                Essential tools and libraries you need to start your journey in computer vision.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm stretched-link" data-en="Read More"
+                                data-fr="Lire la suite">Read More</a>
+                        </div>
+                        <div class="card-footer text-muted small">
+                            <i class="far fa-calendar-alt me-1"></i> Nov 15, 2025
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder Post 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <span class="badge bg-info mb-2">Project</span>
+                            <h5 class="card-title" data-en="Real-time Object Detection on Jetson"
+                                data-fr="Détection d'Objets Temps Réel sur Jetson">Real-time Object Detection on Jetson
+                            </h5>
+                            <p class="card-text text-muted"
+                                data-en="Optimizing YOLO models for edge devices like NVIDIA Jetson Nano."
+                                data-fr="Optimisation des modèles YOLO pour les périphériques Edge comme NVIDIA Jetson Nano.">
+                                Optimizing YOLO models for edge devices like NVIDIA Jetson Nano.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm stretched-link" data-en="Read More"
+                                data-fr="Lire la suite">Read More</a>
+                        </div>
+                        <div class="card-footer text-muted small">
+                            <i class="far fa-calendar-alt me-1"></i> Oct 22, 2025
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="text-center py-4 bg-dark text-white">
+        <div class="container">
+            <p class="mb-0" data-en="&copy; 2025 Mohamed Amine Marnissi" data-fr="&copy; 2025 Mohamed Amine Marnissi">
+                &copy; 2025 Mohamed Amine Marnissi</p>
+            <p class="small mb-0" data-en="Computer Vision & AI Researcher"
+                data-fr="Chercheur en Vision par Ordinateur & IA">Computer Vision & AI Researcher</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../source/main.js" defer></script>
+</body>
+
+</html>

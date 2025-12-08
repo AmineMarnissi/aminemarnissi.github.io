@@ -1,0 +1,206 @@
+/* Project Page Specific Styles */
+
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+#content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    color: #212529;
+    /* Ensure text is dark on white background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    min-height: 100vh;
+}
+
+#content-inner {
+    padding: 20px;
+}
+
+/* Ensure all text inside content is dark */
+#content p,
+#content li,
+#content span,
+#content div {
+    color: #212529;
+}
+
+/* Headings */
+#content h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+#content h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+#content h3 {
+    font-size: 1.4rem;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+/* Authors and Affiliations */
+#content .authors {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+#content .authors a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#content .authors a:hover {
+    text-decoration: underline;
+}
+
+#content .affiliations {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* Tabs (Navigation) */
+#content #tabs {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#content #tabs li {
+    display: inline-block;
+    margin-bottom: -1px;
+}
+
+#content #tabs li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #495057;
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    transition: all 0.2s;
+}
+
+#content #tabs li a:hover {
+    color: #007bff;
+    background-color: #e9ecef;
+    border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+/* Images */
+#content .img_container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#content .img_container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#content .small {
+    max-width: 100%;
+}
+
+/* Sections */
+#content .section {
+    margin-bottom: 30px;
+}
+
+#content .abstract p {
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+/* Lists */
+#content ol li {
+    margin-bottom: 10px;
+}
+
+/* Bibtex */
+#content .bibtex pre {
+    background-color: #f8f9fa;
+    color: #212529;
+    /* Explicitly set color for pre */
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+}
+
+/* Materials Table */
+#content .materials table {
+    margin: 0 auto;
+}
+
+#content .materials td {
+    text-align: center;
+    padding: 20px;
+}
+
+#content .imageLink img {
+    transition: transform 0.2s;
+}
+
+#content .imageLink img:hover {
+    transform: scale(1.05);
+}
+
+/* Contact */
+#content .contact p {
+    font-size: 1.1rem;
+}
+
+/* Home Button */
+.btn-home {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: background-color 0.2s;
+}
+
+.btn-home:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+    color: white;
+}
+
+.home-button-container {
+    text-align: left;
+    margin-bottom: 20px;
+}

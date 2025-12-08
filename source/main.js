@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     initNavHandlers();
 });
 
+// Global reference for typewriter timeout to allow resetting
+let typewriterTimeout;
+
 // Language toggle functionality
 function initLanguageToggle() {
   const languageToggles = document.querySelectorAll('.toggle-language');
@@ -29,13 +32,22 @@ function initLanguageToggle() {
       localStorage.setItem('preferred-language', newLang);
     });
   });
+}
 
-  function switchLanguage(lang) {
-    document.documentElement.setAttribute('lang', lang);
-    document.querySelectorAll('[data-en][data-fr]').forEach(el => {
+function switchLanguage(lang) {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-en][data-fr]').forEach(el => {
+    if (el.classList.contains('typewriter')) {
+      // Special handling for typewriter: update data-words and restart
+      const newWords = el.getAttribute(`data-${lang}`);
+      el.setAttribute('data-words', newWords);
+      initTypewriter(); // Restart typewriter with new words
+    } else {
       el.textContent = el.getAttribute(`data-${lang}`);
-    });
-  }
+    }
+  });
+  // Re-apply theme to ensure toggle button icons and aria-labels are correct after language switch
+  applyTheme(document.body.classList.contains('light-mode'));
 }
 
 
@@ -91,33 +103,19 @@ function applyTheme(isLightMode) {
       : "";
   }
 
-  // 5. Update icon and label for all toggles
+  // 5. Update icon for all toggles, text content will be handled by language toggle
   document.querySelectorAll('.toggle-mode').forEach(toggle => {
-    toggle.innerHTML = isLightMode
-      ? '<i class="fas fa-moon me-2"></i><span>Dark Mode</span>'
-      : '<i class="fas fa-sun me-2"></i><span>Light Mode</span>';
+    const icon = toggle.querySelector('i');
+    if (icon) {
+      icon.classList.remove('fas', 'fa-moon', 'fa-sun');
+      icon.classList.add('fas', isLightMode ? 'fa-moon' : 'fa-sun');
+    }
     toggle.setAttribute('aria-label', isLightMode ? 'Switch to dark mode' : 'Switch to light mode');
   });
 }
 
 
-function updateDarkModeIcon(isLightMode) {
-  const toggles = document.querySelectorAll('.toggle-mode');
-  toggles.forEach(toggle => {
-    toggle.innerHTML = isLightMode
-      ? '<i class="fas fa-moon me-2"></i><span>Dark Mode</span>'
-      : '<i class="fas fa-sun me-2"></i><span>Light Mode</span>';
-    toggle.setAttribute('aria-label', isLightMode ? 'Switch to dark mode' : 'Switch to light mode');
-  });
-}
 
-
-function updateDarkModeIcon(isLightMode) {
-    const darkModeToggle = document.getElementById('.toggle-mode');
-    if (!darkModeToggle) return;
-    darkModeToggle.innerHTML = isLightMode ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-    darkModeToggle.setAttribute('aria-label', isLightMode ? 'Switch to dark mode' : 'Switch to light mode');
-}
 
 // Scroll animations
 function initAnimations() {
@@ -200,7 +198,7 @@ function initFormValidation() {
 }
 
 function isValidEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const re = /^[^S@]+@[^S@]+\.[^S@]+$/;
     return re.test(String(email).toLowerCase());
 }
 
@@ -273,9 +271,9 @@ function initProjectFilter() {
             const filter = this.getAttribute('data-filter');
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            document.querySelectorAll('.project-item').forEach(item => {
+            document.querySelectorAll('.publication-item').forEach(item => { 
                 if (filter === 'all' || item.classList.contains(filter)) {
-                    item.style.display = 'block';
+                    item.style.display = 'flex'; 
                     setTimeout(() => item.classList.remove('filtered-out'), 10);
                 } else {
                     item.classList.add('filtered-out');
@@ -289,8 +287,13 @@ function initProjectFilter() {
 function initTypewriter() {
     const element = document.querySelector('.typewriter');
     if (!element) return;
+    
+    // Clear existing timeout if restarting
+    if (typewriterTimeout) clearTimeout(typewriterTimeout);
+
     const words = JSON.parse(element.getAttribute('data-words'));
     if (!words || !words.length) return;
+    
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -310,18 +313,27 @@ function initTypewriter() {
 
         if (!isDeleting && charIndex === currentWord.length) {
             isDeleting = true;
-            typeSpeed = 1500;
+            typeSpeed = 50;
+            typewriterTimeout = setTimeout(type, 1500); // Pause after typing a word
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
-            typeSpeed = 500;
+            typeSpeed = 150;
+            typewriterTimeout = setTimeout(type, 500); // Pause before typing next word
+        } else {
+            typewriterTimeout = setTimeout(type, typeSpeed);
         }
-        setTimeout(type, typeSpeed);
     }
-    setTimeout(type, 1000);
+    type();
 }
 
 function initNavHandlers() {
+    // Check if Bootstrap is available
+    if (typeof bootstrap === 'undefined') {
+        console.warn('Bootstrap is not loaded. Navigation handlers may not work correctly.');
+        return;
+    }
+
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
@@ -355,13 +367,14 @@ function initNavHandlers() {
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (window.innerWidth < 992) {
+            if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
                 const bsCollapse = new bootstrap.Collapse(navbarCollapse);
                 bsCollapse.hide();
             }
         });
     });
 }
+
 function copyBibtex(id) {
     const text = document.getElementById(id).innerText;
     navigator.clipboard.writeText(text).then(() => {
@@ -369,74 +382,4 @@ function copyBibtex(id) {
     }).catch(err => {
       console.error('Failed to copy: ', err);
     });
-  }
-  
-// Publication filter functionality
-const filterButtons = document.querySelectorAll('.filter-btn');
-const publications = document.querySelectorAll('.publication-item');
-
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    document.querySelector('.filter-btn.active').classList.remove('active');
-    button.classList.add('active');
-
-    const filter = button.getAttribute('data-filter');
-
-    publications.forEach(item => {
-      if (filter === 'all') {
-        item.style.display = 'flex';
-      } else {
-        item.style.display = item.classList.contains(filter) ? 'flex' : 'none';
-      }
-    });
-  });
-});
-
-// Copy BibTeX function
-function copyBibtex(elementId) {
-  const bibText = document.getElementById(elementId).innerText;
-  navigator.clipboard.writeText(bibText).then(() => {
-    alert("BibTeX copied to clipboard!");
-  }).catch(err => {
-    console.error('Could not copy text: ', err);
-  });
 }
-
-// Typewriter effect
-document.addEventListener('DOMContentLoaded', function() {
-  const element = document.getElementById('typedText');
-  if (!element) return;
-  
-  const words = JSON.parse(element.getAttribute('data-words'));
-  let wordIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let typeSpeed = 100;
-  
-  function type() {
-    const currentWord = words[wordIndex];
-    
-    if (isDeleting) {
-      element.textContent = currentWord.substring(0, charIndex - 1);
-      charIndex--;
-    } else {
-      element.textContent = currentWord.substring(0, charIndex + 1);
-      charIndex++;
-    }
-    
-    if (!isDeleting && charIndex === currentWord.length) {
-      isDeleting = true;
-      typeSpeed = 50;
-      setTimeout(type, 1500);
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
-      typeSpeed = 150;
-      setTimeout(type, 500);
-    } else {
-      setTimeout(type, typeSpeed);
-    }
-  }
-  
-  type();
-});
