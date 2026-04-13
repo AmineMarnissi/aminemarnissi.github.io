@@ -68,6 +68,7 @@
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --box-shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
   --header-height: 70px;
+  --container-max-width: 1300px;
 }
 
 /* ===== Accessibility & Focus States ===== */
@@ -79,6 +80,13 @@
 
 .btn:focus-visible {
   outline-offset: 3px;
+}
+
+/* Use standard container but override its max-width on large screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: var(--container-max-width);
+  }
 }
 
 /* ===== Base Styles ===== */
@@ -360,6 +368,75 @@ body:not(.light-mode) .section-title {
 .section-hidden.animate {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== Header Section - Option 2 ===== */
+.profile-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-image-container-lg {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: var(--radius-circle);
+  padding: 10px;
+  background: linear-gradient(145deg, var(--primary-base), var(--primary-dark));
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+}
+
+.profile-image-container-lg:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.profile-image-lg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-circle);
+  border: 6px solid white;
+}
+
+body:not(.light-mode) .profile-image-lg {
+  border-color: var(--dark-theme-bg);
+}
+
+.floating-badge {
+  position: absolute;
+  bottom: 20px;
+  right: -10px;
+  background: white;
+  padding: 8px 15px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  color: #333;
+}
+
+body:not(.light-mode) .floating-badge {
+  background: var(--dark-theme-surface);
+  color: white;
+}
+
+.stats-row .stat-item {
+  padding: 10px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  color: var(--primary-base);
+}
+
+.stat-label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.7rem;
 }
 
 /* ===== Header Section ===== */
