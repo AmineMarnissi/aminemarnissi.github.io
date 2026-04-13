@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initTypewriter();
     initProjectFilter();
     initNavHandlers();
+    initBackToTop();
 });
 
 // Global reference for typewriter timeout to allow resetting
@@ -371,6 +372,26 @@ function initNavHandlers() {
                 const bsCollapse = new bootstrap.Collapse(navbarCollapse);
                 bsCollapse.hide();
             }
+        });
+    });
+}
+
+function initBackToTop() {
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (!backToTopBtn) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
     });
 }

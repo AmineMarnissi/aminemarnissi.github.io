@@ -114,79 +114,112 @@
         </div>
     </nav>
 
-    <div class="container py-5">
-        <section id="blog-posts" class="my-5">
-            <h1 class="text-center mb-5" data-en="Blog" data-fr="Blog">Blog</h1>
+    <main id="main-content">
+        <div class="container py-5">
+            <section id="blog-header" class="mb-5">
+                <h1 class="text-center mb-4" data-en="Research & AI Blog" data-fr="Blog Recherche & IA">Research & AI Blog</h1>
+                <p class="lead text-center text-muted" data-en="Insights into computer vision, deep learning, and thermal imaging." data-fr="Aperçus sur la vision par ordinateur, le deep learning et l'imagerie thermique.">Insights into computer vision, deep learning, and thermal imaging.</p>
+            </section>
 
-            <div class="row g-4">
-                <!-- Placeholder Post 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <span class="badge bg-primary mb-2">AI Research</span>
-                            <h5 class="card-title" data-en="Understanding Thermal Image Enhancement"
-                                data-fr="Comprendre l'Amélioration des Images Thermiques">Understanding Thermal Image
-                                Enhancement</h5>
-                            <p class="card-text text-muted"
-                                data-en="A deep dive into how GANs can be used to improve the quality of thermal imagery for better object detection."
-                                data-fr="Une plongée profonde dans la façon dont les GAN peuvent être utilisés pour améliorer la qualité de l'imagerie thermique.">
-                                A deep dive into how GANs can be used to improve the quality of thermal imagery for
-                                better object detection.</p>
-                            <a href="posts/thermal_enhancement.html"
-                                class="btn btn-outline-primary btn-sm stretched-link" data-en="Read More"
-                                data-fr="Lire la suite">Read More</a>
+            <!-- Featured Post -->
+            <section id="featured-post" class="mb-5">
+                <div class="card bg-dark text-white border-0 overflow-hidden shadow-lg">
+                    <div class="row g-0">
+                        <div class="col-lg-7">
+                            <img src="../images/pages/paper.webp" class="img-fluid h-100" alt="Featured Post" style="object-fit: cover; min-height: 300px;">
                         </div>
-                        <div class="card-footer text-muted small">
-                            <i class="far fa-calendar-alt me-1"></i> Dec 8, 2025
+                        <div class="col-lg-5 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5">
+                                <span class="badge bg-danger mb-3" data-en="Featured" data-fr="À la Une">Featured</span>
+                                <h2 class="card-title h1 mb-4" data-en="The Future of Thermal Imaging in AI" data-fr="L'Avenir de l'Imagerie Thermique en IA">The Future of Thermal Imaging in AI</h2>
+                                <p class="card-text mb-4" data-en="How multimodal sensors are changing the landscape of autonomous security and surveillance." data-fr="Comment les capteurs multimodaux changent le paysage de la sécurité et de la surveillance autonomes.">How multimodal sensors are changing the landscape of autonomous security and surveillance.</p>
+                                <a href="posts/thermal_enhancement.html" class="btn btn-primary btn-lg" data-en="Read Full Article" data-fr="Lire l'Article">Read Full Article</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Placeholder Post 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <span class="badge bg-success mb-2">Tutorial</span>
-                            <h5 class="card-title" data-en="Getting Started with Computer Vision"
-                                data-fr="Débuter avec la Vision par Ordinateur">Getting Started with Computer Vision
-                            </h5>
-                            <p class="card-text text-muted"
-                                data-en="Essential tools and libraries you need to start your journey in computer vision."
-                                data-fr="Outils et bibliothèques essentiels pour commencer votre parcours en vision par ordinateur.">
-                                Essential tools and libraries you need to start your journey in computer vision.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm stretched-link" data-en="Read More"
-                                data-fr="Lire la suite">Read More</a>
-                        </div>
-                        <div class="card-footer text-muted small">
-                            <i class="far fa-calendar-alt me-1"></i> Nov 15, 2025
-                        </div>
+            <section id="blog-posts" class="my-5">
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+                    <h3 data-en="Recent Articles" data-fr="Articles Récents">Recent Articles</h3>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-outline-secondary active">All</button>
+                        <button class="btn btn-outline-secondary">Computer Vision</button>
+                        <button class="btn btn-outline-secondary">Deep Learning</button>
                     </div>
                 </div>
 
-                <!-- Placeholder Post 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <span class="badge bg-info mb-2">Project</span>
-                            <h5 class="card-title" data-en="Real-time Object Detection on Jetson"
-                                data-fr="Détection d'Objets Temps Réel sur Jetson">Real-time Object Detection on Jetson
-                            </h5>
-                            <p class="card-text text-muted"
-                                data-en="Optimizing YOLO models for edge devices like NVIDIA Jetson Nano."
-                                data-fr="Optimisation des modèles YOLO pour les périphériques Edge comme NVIDIA Jetson Nano.">
-                                Optimizing YOLO models for edge devices like NVIDIA Jetson Nano.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm stretched-link" data-en="Read More"
-                                data-fr="Lire la suite">Read More</a>
-                        </div>
-                        <div class="card-footer text-muted small">
-                            <i class="far fa-calendar-alt me-1"></i> Oct 22, 2025
+                <div class="row g-4">
+                    <!-- Placeholder Post 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">AI Research</span>
+                                <h5 class="card-title" data-en="Understanding Thermal Image Enhancement"
+                                    data-fr="Comprendre l'Amélioration des Images Thermiques">Understanding Thermal Image
+                                    Enhancement</h5>
+                                <p class="card-text text-muted"
+                                    data-en="A deep dive into how GANs can be used to improve the quality of thermal imagery for better object detection."
+                                    data-fr="Une plongée profonde dans la façon dont les GAN peuvent être utilisés pour améliorer la qualité de l'imagerie thermique.">
+                                    A deep dive into how GANs can be used to improve the quality of thermal imagery for
+                                    better object detection.</p>
+                                <a href="posts/thermal_enhancement.html"
+                                    class="btn btn-outline-primary btn-sm stretched-link" data-en="Read More"
+                                    data-fr="Lire la suite">Read More</a>
+                            </div>
+                            <div class="card-footer text-muted small">
+                                <i class="far fa-calendar-alt me-1"></i> Dec 8, 2025
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
-        </section>
-    </div>
+                    <!-- Placeholder Post 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <span class="badge bg-success mb-2">Tutorial</span>
+                                <h5 class="card-title" data-en="Getting Started with Computer Vision"
+                                    data-fr="Débuter avec la Vision par Ordinateur">Getting Started with Computer Vision
+                                </h5>
+                                <p class="card-text text-muted"
+                                    data-en="Essential tools and libraries you need to start your journey in computer vision."
+                                    data-fr="Outils et bibliothèques essentiels pour commencer votre parcours en vision par ordinateur.">
+                                    Essential tools and libraries you need to start your journey in computer vision.</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm stretched-link" data-en="Read More"
+                                    data-fr="Lire la suite">Read More</a>
+                            </div>
+                            <div class="card-footer text-muted small">
+                                <i class="far fa-calendar-alt me-1"></i> Nov 15, 2025
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder Post 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <span class="badge bg-info mb-2">Project</span>
+                                <h5 class="card-title" data-en="Real-time Object Detection on Jetson"
+                                    data-fr="Détection d'Objets Temps Réel sur Jetson">Real-time Object Detection on Jetson
+                                </h5>
+                                <p class="card-text text-muted"
+                                    data-en="Optimizing YOLO models for edge devices like NVIDIA Jetson Nano."
+                                    data-fr="Optimisation des modèles YOLO pour les périphériques Edge comme NVIDIA Jetson Nano.">
+                                    Optimizing YOLO models for edge devices like NVIDIA Jetson Nano.</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm stretched-link" data-en="Read More"
+                                    data-fr="Lire la suite">Read More</a>
+                            </div>
+                            <div class="card-footer text-muted small">
+                                <i class="far fa-calendar-alt me-1"></i> Oct 22, 2025
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
 
     <!-- Footer Section -->
     <footer class="text-center py-4 bg-dark text-white">
@@ -197,6 +230,10 @@
                 data-fr="Chercheur en Vision par Ordinateur & IA">Computer Vision & AI Researcher</p>
         </div>
     </footer>
+
+    <button id="back-to-top" class="btn btn-primary rounded-circle" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
