@@ -117,107 +117,188 @@
     <main id="main-content">
         <div class="container py-5">
             <section id="blog-header" class="mb-5">
-                <h1 class="text-center mb-4" data-en="Research & AI Blog" data-fr="Blog Recherche & IA">Research & AI Blog</h1>
-                <p class="lead text-center text-muted" data-en="Insights into computer vision, deep learning, and thermal imaging." data-fr="Aperçus sur la vision par ordinateur, le deep learning et l'imagerie thermique.">Insights into computer vision, deep learning, and thermal imaging.</p>
+                <h1 class="text-center mb-4 display-4 fw-bold" data-en="Research & AI Blog" data-fr="Blog Recherche & IA">Research & AI Blog</h1>
+                <p class="lead text-center text-muted max-w-700 mx-auto" data-en="Insights into computer vision, deep learning, and thermal imaging research." data-fr="Aperçus sur la recherche en vision par ordinateur, deep learning et imagerie thermique.">Insights into computer vision, deep learning, and thermal imaging research.</p>
             </section>
 
             <!-- Featured Post -->
-            <section id="featured-post" class="mb-5">
-                <div class="card bg-dark text-white border-0 overflow-hidden shadow-lg">
+            <section id="featured-post" class="mb-5 pb-4">
+                <div class="card bg-dark text-white border-0 overflow-hidden shadow-lg featured-card">
                     <div class="row g-0">
                         <div class="col-lg-7">
-                            <img src="../images/pages/paper.webp" class="img-fluid h-100" alt="Featured Post" style="object-fit: cover; min-height: 300px;">
+                            <div class="featured-img-container">
+                                <img src="../images/pages/paper.webp" class="img-fluid h-100 w-100" alt="Featured Post" style="object-fit: cover;">
+                            </div>
                         </div>
                         <div class="col-lg-5 d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5">
                                 <span class="badge bg-danger mb-3" data-en="Featured" data-fr="À la Une">Featured</span>
                                 <h2 class="card-title h1 mb-4" data-en="The Future of Thermal Imaging in AI" data-fr="L'Avenir de l'Imagerie Thermique en IA">The Future of Thermal Imaging in AI</h2>
-                                <p class="card-text mb-4" data-en="How multimodal sensors are changing the landscape of autonomous security and surveillance." data-fr="Comment les capteurs multimodaux changent le paysage de la sécurité et de la surveillance autonomes.">How multimodal sensors are changing the landscape of autonomous security and surveillance.</p>
-                                <a href="posts/thermal_enhancement.html" class="btn btn-primary btn-lg" data-en="Read Full Article" data-fr="Lire l'Article">Read Full Article</a>
+                                <p class="card-text mb-4 text-light-50" data-en="How multimodal sensors are changing the landscape of autonomous security and surveillance systems." data-fr="Comment les capteurs multimodaux changent le paysage de la sécurité et de la surveillance autonomes.">How multimodal sensors are changing the landscape of autonomous security and surveillance systems.</p>
+                                <div class="d-flex align-items-center mb-4 small">
+                                    <img src="../images/profile-marnissi.webp" class="rounded-circle me-2" width="30" height="30" alt="Author">
+                                    <span class="me-3">Amine Marnissi</span>
+                                    <span class="text-muted"><i class="far fa-clock me-1"></i> 8 min read</span>
+                                </div>
+                                <a href="posts/thermal_enhancement.html" class="btn btn-primary btn-lg px-4" data-en="Read Full Article" data-fr="Lire l'Article">Read Full Article</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="blog-posts" class="my-5">
-                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
-                    <h3 data-en="Recent Articles" data-fr="Articles Récents">Recent Articles</h3>
-                    <div class="btn-group btn-group-sm">
-                        <button class="btn btn-outline-secondary active">All</button>
-                        <button class="btn btn-outline-secondary">Computer Vision</button>
-                        <button class="btn btn-outline-secondary">Deep Learning</button>
-                    </div>
+            <div class="row g-5">
+                <!-- Main Posts Column -->
+                <div class="col-lg-8">
+                    <section id="blog-posts">
+                        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+                            <h3 class="fw-bold" data-en="Recent Articles" data-fr="Articles Récents">Recent Articles</h3>
+                            <div class="btn-group btn-group-sm">
+                                <button class="btn btn-outline-secondary active">All</button>
+                                <button class="btn btn-outline-secondary">Computer Vision</button>
+                                <button class="btn btn-outline-secondary">Deep Learning</button>
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            <!-- Post 1 -->
+                            <div class="col-md-12">
+                                <div class="card h-100 blog-list-card border-0 shadow-sm overflow-hidden">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="../images/pages/vc_gan.webp" class="img-fluid h-100 w-100" alt="Post Image" style="object-fit: cover; min-height: 200px;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body p-4">
+                                                <div class="mb-2">
+                                                    <span class="badge bg-primary-fade text-primary mb-0">AI Research</span>
+                                                    <span class="text-muted small ms-2"><i class="far fa-calendar-alt me-1"></i> Dec 8, 2025</span>
+                                                </div>
+                                                <h4 class="card-title fw-bold" data-en="Understanding Thermal Image Enhancement" data-fr="Comprendre l'Amélioration des Images Thermiques">Understanding Thermal Image Enhancement</h4>
+                                                <p class="card-text text-muted" data-en="A deep dive into how GANs can be used to improve the quality of thermal imagery for better object detection." data-fr="Une plongée profonde dans la façon dont les GAN peuvent être utilisés pour améliorer la qualité de l'imagerie thermique.">A deep dive into how GANs can be used to improve the quality of thermal imagery for better object detection.</p>
+                                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                                    <a href="posts/thermal_enhancement.html" class="btn btn-link p-0 text-decoration-none fw-bold" data-en="Read More →" data-fr="Lire la suite →">Read More →</a>
+                                                    <span class="small text-muted"><i class="far fa-clock me-1"></i> 5 min read</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post 2 -->
+                            <div class="col-md-12">
+                                <div class="card h-100 blog-list-card border-0 shadow-sm overflow-hidden">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="../images/pages/visapp.webp" class="img-fluid h-100 w-100" alt="Post Image" style="object-fit: cover; min-height: 200px;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body p-4">
+                                                <div class="mb-2">
+                                                    <span class="badge bg-success-fade text-success mb-0">Tutorial</span>
+                                                    <span class="text-muted small ms-2"><i class="far fa-calendar-alt me-1"></i> Nov 15, 2025</span>
+                                                </div>
+                                                <h4 class="card-title fw-bold" data-en="Getting Started with Computer Vision" data-fr="Débuter avec la Vision par Ordinateur">Getting Started with Computer Vision</h4>
+                                                <p class="card-text text-muted" data-en="Essential tools and libraries you need to start your journey in computer vision using Python and OpenCV." data-fr="Outils et bibliothèques essentiels pour commencer votre parcours en vision par ordinateur.">Essential tools and libraries you need to start your journey in computer vision using Python and OpenCV.</p>
+                                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                                    <a href="#" class="btn btn-link p-0 text-decoration-none fw-bold" data-en="Read More →" data-fr="Lire la suite →">Read More →</a>
+                                                    <span class="small text-muted"><i class="far fa-clock me-1"></i> 10 min read</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post 3 -->
+                            <div class="col-md-12">
+                                <div class="card h-100 blog-list-card border-0 shadow-sm overflow-hidden">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="../images/pages/vc_detection.webp" class="img-fluid h-100 w-100" alt="Post Image" style="object-fit: cover; min-height: 200px;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body p-4">
+                                                <div class="mb-2">
+                                                    <span class="badge bg-info-fade text-info mb-0">Project</span>
+                                                    <span class="text-muted small ms-2"><i class="far fa-calendar-alt me-1"></i> Oct 22, 2025</span>
+                                                </div>
+                                                <h4 class="card-title fw-bold" data-en="Real-time Object Detection on Jetson" data-fr="Détection d'Objets Temps Réel sur Jetson">Real-time Object Detection on Jetson</h4>
+                                                <p class="card-text text-muted" data-en="Optimizing YOLO models for edge devices like NVIDIA Jetson Nano to achieve high FPS in thermal feeds." data-fr="Optimisation des modèles YOLO pour les périphériques Edge comme NVIDIA Jetson Nano.">Optimizing YOLO models for edge devices like NVIDIA Jetson Nano to achieve high FPS in thermal feeds.</p>
+                                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                                    <a href="#" class="btn btn-link p-0 text-decoration-none fw-bold" data-en="Read More →" data-fr="Lire la suite →">Read More →</a>
+                                                    <span class="small text-muted"><i class="far fa-clock me-1"></i> 7 min read</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <nav aria-label="Page navigation" class="mt-5">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </section>
                 </div>
 
-                <div class="row g-4">
-                    <!-- Placeholder Post 1 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <span class="badge bg-primary mb-2">AI Research</span>
-                                <h5 class="card-title" data-en="Understanding Thermal Image Enhancement"
-                                    data-fr="Comprendre l'Amélioration des Images Thermiques">Understanding Thermal Image
-                                    Enhancement</h5>
-                                <p class="card-text text-muted"
-                                    data-en="A deep dive into how GANs can be used to improve the quality of thermal imagery for better object detection."
-                                    data-fr="Une plongée profonde dans la façon dont les GAN peuvent être utilisés pour améliorer la qualité de l'imagerie thermique.">
-                                    A deep dive into how GANs can be used to improve the quality of thermal imagery for
-                                    better object detection.</p>
-                                <a href="posts/thermal_enhancement.html"
-                                    class="btn btn-outline-primary btn-sm stretched-link" data-en="Read More"
-                                    data-fr="Lire la suite">Read More</a>
-                            </div>
-                            <div class="card-footer text-muted small">
-                                <i class="far fa-calendar-alt me-1"></i> Dec 8, 2025
+                <!-- Sidebar Column -->
+                <div class="col-lg-4">
+                    <aside class="blog-sidebar">
+                        <!-- Search Widget -->
+                        <div class="card border-0 shadow-sm mb-4 p-4">
+                            <h5 class="fw-bold mb-3" data-en="Search" data-fr="Recherche">Search</h5>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search articles..." aria-label="Search">
+                                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Placeholder Post 2 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <span class="badge bg-success mb-2">Tutorial</span>
-                                <h5 class="card-title" data-en="Getting Started with Computer Vision"
-                                    data-fr="Débuter avec la Vision par Ordinateur">Getting Started with Computer Vision
-                                </h5>
-                                <p class="card-text text-muted"
-                                    data-en="Essential tools and libraries you need to start your journey in computer vision."
-                                    data-fr="Outils et bibliothèques essentiels pour commencer votre parcours en vision par ordinateur.">
-                                    Essential tools and libraries you need to start your journey in computer vision.</p>
-                                <a href="#" class="btn btn-outline-primary btn-sm stretched-link" data-en="Read More"
-                                    data-fr="Lire la suite">Read More</a>
-                            </div>
-                            <div class="card-footer text-muted small">
-                                <i class="far fa-calendar-alt me-1"></i> Nov 15, 2025
+                        <!-- Categories Widget -->
+                        <div class="card border-0 shadow-sm mb-4 p-4">
+                            <h5 class="fw-bold mb-3" data-en="Categories" data-fr="Catégories">Categories</h5>
+                            <ul class="list-unstyled mb-0 sidebar-list">
+                                <li class="mb-2"><a href="#" class="text-decoration-none d-flex justify-content-between align-items-center">Computer Vision <span class="badge bg-light text-dark rounded-pill">12</span></a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none d-flex justify-content-between align-items-center">Deep Learning <span class="badge bg-light text-dark rounded-pill">8</span></a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none d-flex justify-content-between align-items-center">Thermal Imaging <span class="badge bg-light text-dark rounded-pill">5</span></a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none d-flex justify-content-between align-items-center">Robotics <span class="badge bg-light text-dark rounded-pill">3</span></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Newsletter Widget -->
+                        <div class="card border-0 shadow-sm mb-4 p-4 bg-primary text-white">
+                            <h5 class="fw-bold mb-3" data-en="Newsletter" data-fr="Newsletter">Newsletter</h5>
+                            <p class="small mb-3" data-en="Get the latest AI research insights directly in your inbox." data-fr="Recevez les dernières recherches en IA directement dans votre boîte mail.">Get the latest AI research insights directly in your inbox.</p>
+                            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                                <div class="mb-3">
+                                    <input type="email" class="form-control form-control-sm" placeholder="Your email..." required>
+                                </div>
+                                <button type="submit" class="btn btn-light btn-sm w-100 fw-bold text-primary" data-en="Subscribe" data-fr="S'abonner">Subscribe Now</button>
+                            </form>
+                        </div>
+
+                        <!-- Tags Widget -->
+                        <div class="card border-0 shadow-sm mb-4 p-4">
+                            <h5 class="fw-bold mb-3" data-en="Popular Tags" data-fr="Tags Populaires">Popular Tags</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 px-3">PyTorch</a>
+                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 px-3">GAN</a>
+                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 px-3">YOLO</a>
+                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 px-3">Transformers</a>
+                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 px-3">OpenCV</a>
+                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 px-3">Jetson Nano</a>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Placeholder Post 3 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <span class="badge bg-info mb-2">Project</span>
-                                <h5 class="card-title" data-en="Real-time Object Detection on Jetson"
-                                    data-fr="Détection d'Objets Temps Réel sur Jetson">Real-time Object Detection on Jetson
-                                </h5>
-                                <p class="card-text text-muted"
-                                    data-en="Optimizing YOLO models for edge devices like NVIDIA Jetson Nano."
-                                    data-fr="Optimisation des modèles YOLO pour les périphériques Edge comme NVIDIA Jetson Nano.">
-                                    Optimizing YOLO models for edge devices like NVIDIA Jetson Nano.</p>
-                                <a href="#" class="btn btn-outline-primary btn-sm stretched-link" data-en="Read More"
-                                    data-fr="Lire la suite">Read More</a>
-                            </div>
-                            <div class="card-footer text-muted small">
-                                <i class="far fa-calendar-alt me-1"></i> Oct 22, 2025
-                            </div>
-                        </div>
-                    </div>
-
+                    </aside>
                 </div>
-            </section>
+            </div>
         </div>
     </main>
 

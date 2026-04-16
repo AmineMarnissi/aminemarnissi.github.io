@@ -935,6 +935,9 @@ body:not(.light-mode) .theme-switcher {
   visibility: hidden;
   transition: var(--transition);
   box-shadow: var(--box-shadow);
+  background: linear-gradient(135deg, var(--primary-base), var(--primary-dark));
+  border: none;
+  color: white;
 }
 
 #back-to-top.show {
@@ -945,6 +948,21 @@ body:not(.light-mode) .theme-switcher {
 #back-to-top:hover {
   transform: translateY(-5px);
   box-shadow: var(--box-shadow-hover);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-base));
+  color: white;
+}
+
+/* Custom Outlined Buttons to match template */
+.btn-outline-primary {
+  color: var(--primary-base);
+  border-color: var(--primary-base);
+  transition: var(--transition);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-base);
+  border-color: var(--primary-base);
+  color: white;
 }
 
 /* ===== Responsive Design ===== */
