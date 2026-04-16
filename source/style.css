@@ -497,7 +497,7 @@ body:not(.light-mode) .profile-image {
 .timeline {
   position: relative;
   padding-left: 2rem;
-  margin-left: 1rem;
+  margin-left: 6.5rem; /* Augmenté pour laisser de la place aux badges à gauche */
 }
 
 .timeline:before {
@@ -513,8 +513,8 @@ body:not(.light-mode) .profile-image {
 .timeline-item {
   position: relative;
   margin-bottom: 2rem;
-  padding: 1rem;
-  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
   background-color: var(--light-theme-surface);
   box-shadow: var(--box-shadow);
   transition: var(--transition);
@@ -531,28 +531,39 @@ body:not(.light-mode) .timeline-item {
 
 .timeline-date {
   position: absolute;
-  left: -4.5rem;
-  top: 2rem;
+  left: -8.5rem; /* Ajusté par rapport à la nouvelle marge */
+  top: 1.5rem;
   background-color: var(--primary-base);
   color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--border-radius);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-sm);
   font-weight: bold;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   white-space: nowrap;
+  min-width: 100px;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .timeline-item:before {
   content: '';
   position: absolute;
-  left: -2.5rem;
-  top: 1.5rem;
-  width: 1rem;
-  height: 1rem;
+  left: -2.55rem;
+  top: 1.9rem;
+  width: 1.1rem;
+  height: 1.1rem;
   border-radius: var(--radius-circle);
   background-color: var(--primary-base);
-  border: 2px solid white;
-  z-index: 1;
+  border: 3px solid white;
+  z-index: 2;
+  box-shadow: 0 0 0 3px var(--primary-fade-light);
+}
+
+body:not(.light-mode) .timeline-item:before {
+  border-color: var(--dark-theme-surface);
 }
 
 .timeline-item-hidden {
