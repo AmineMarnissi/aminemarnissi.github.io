@@ -5,8 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Blog | Mohamed Amine Marnissi</title>
-    <meta name="description"
-        content="Blog of Mohamed Amine Marnissi - Insights on AI, Computer Vision, and Thermal Imaging.">
+    <meta name="description" content="Blog of Mohamed Amine Marnissi - Insights on AI, Computer Vision, and Thermal Imaging research.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,62 +18,40 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../source/style.css">
+    <link rel="stylesheet" href="../source/blog.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top mb-4">
         <div class="container">
-
-            <!-- Logo -->
             <a class="navbar-brand" href="../index.html">
                 <img src="../images/logo-amine.webp" alt="Logo" class="logo-img" loading="lazy">
             </a>
-
-            <!-- Toggle button for mobile -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Navbar content -->
             <div class="collapse navbar-collapse" id="navbarNav">
-
-                <!-- Navigation links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="../index.html#awards" data-en="Awards"
-                            data-fr="Récompenses">Awards</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#education" data-en="Education"
-                            data-fr="Formation">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#publications" data-en="Publications"
-                            data-fr="Publications">Publications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#projects" data-en="Projects"
-                            data-fr="Projets">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#datasets" data-en="Datasets"
-                            data-fr="Jeux de données">Datasets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#awards" data-en="Awards" data-fr="Récompenses">Awards</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#education" data-en="Education" data-fr="Formation">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#publications" data-en="Publications" data-fr="Publications">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#projects" data-en="Projects" data-fr="Projets">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#datasets" data-en="Datasets" data-fr="Jeux de données">Datasets</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" data-en="Experience" data-fr="Expérience">
-                            Experience
-                        </a>
+                            data-bs-toggle="dropdown" aria-expanded="false" data-en="Experience" data-fr="Expérience">Experience</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="../index.html#experience" data-en="Work Experience"
-                                    data-fr="Expérience professionnelle">Work Experience</a></li>
-                            <li><a class="dropdown-item" href="../index.html#teaching" data-en="Teaching"
-                                    data-fr="Enseignement">Teaching</a></li>
-                            <li><a class="dropdown-item" href="../index.html#supervision" data-en="Supervision"
-                                    data-fr="Encadrement">Supervision</a></li>
+                            <li><a class="dropdown-item" href="../index.html#experience" data-en="Work Experience" data-fr="Expérience professionnelle">Work Experience</a></li>
+                            <li><a class="dropdown-item" href="../index.html#teaching" data-en="Teaching" data-fr="Enseignement">Teaching</a></li>
+                            <li><a class="dropdown-item" href="../index.html#supervision" data-en="Supervision" data-fr="Encadrement">Supervision</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#patents" data-en="Patents"
-                            data-fr="Brevets">Patents</a></li>
-                    <li class="nav-item"><a class="nav-link" href="freelance.html" data-en="Services"
-                            data-fr="Services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="blog.html" data-en="Blog"
-                            data-fr="Blog">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#contact" data-en="Contact"
-                            data-fr="Contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#patents" data-en="Patents" data-fr="Brevets">Patents</a></li>
+                    <li class="nav-item"><a class="nav-link" href="freelance.html" data-en="Services" data-fr="Services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html" data-en="Blog" data-fr="Blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
                 </ul>
-                <!-- Settings dropdown for large screens -->
                 <div class="dropdown d-none d-lg-block position-absolute top-0 end-0 m-3">
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="settingsDropdown"
                         data-bs-toggle="dropdown" aria-expanded="false" aria-label="Settings">
@@ -80,18 +60,14 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
                         <li>
                             <a class="dropdown-item toggle-mode" href="#">
-                                <i class="fas fa-moon me-2"></i><span data-en="Dark Mode" data-fr="Mode Sombre">Dark
-                                    Mode</span>
+                                <i class="fas fa-moon me-2"></i><span data-en="Dark Mode" data-fr="Mode Sombre">Dark Mode</span>
                             </a>
                             <a class="dropdown-item toggle-language" href="#">
-                                <i class="fa fa-globe me-2"></i><span data-en="Language"
-                                    data-fr="Langue">Language</span>
+                                <i class="fa fa-globe me-2"></i><span data-en="Language" data-fr="Langue">Language</span>
                             </a>
                         </li>
                     </ul>
                 </div>
-
-                <!-- Mobile Settings -->
                 <div class="d-block d-lg-none mt-3 p-3">
                     <div class="row g-2">
                         <div class="col-6">
@@ -101,214 +77,373 @@
                             </button>
                         </div>
                         <div class="col-6">
-                            <button class="btn btn-outline-secondary w-100 toggle-language"
-                                aria-label="Toggle Language">
+                            <button class="btn btn-outline-secondary w-100 toggle-language" aria-label="Toggle Language">
                                 <i class="fa fa-language me-2"></i>
                                 <span data-en="Language" data-fr="Langue">Language</span>
                             </button>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </nav>
 
     <main id="main-content">
-        <div class="container py-5">
-            <section id="blog-header" class="mb-5">
-                <h1 class="text-center mb-4 display-4 fw-bold" data-en="Research & AI Blog" data-fr="Blog Recherche & IA">Research & AI Blog</h1>
-                <p class="lead text-center text-muted max-w-700 mx-auto" data-en="Insights into computer vision, deep learning, and thermal imaging research." data-fr="Aperçus sur la recherche en vision par ordinateur, deep learning et imagerie thermique.">Insights into computer vision, deep learning, and thermal imaging research.</p>
-            </section>
 
-            <!-- Featured Post -->
-            <section id="featured-post" class="mb-5 pb-4">
-                <div class="card bg-dark text-white border-0 overflow-hidden shadow-lg featured-card">
-                    <div class="row g-0">
-                        <div class="col-lg-7">
-                            <div class="featured-img-container">
-                                <img src="../images/pages/paper.webp" class="img-fluid h-100 w-100" alt="Featured Post" style="object-fit: cover;">
-                            </div>
+        <!-- ===== BLOG HERO ===== -->
+        <section class="blog-hero">
+            <div class="blog-hero-bg"></div>
+            <div class="blog-hero-particles" id="hero-particles"></div>
+            <div class="container position-relative">
+                <div class="blog-hero-content text-center">
+                    <div class="blog-hero-label" data-en="Research & Insights" data-fr="Recherche & Perspectives">
+                        <i class="fas fa-brain me-2"></i>Research & Insights
+                    </div>
+                    <h1 class="blog-hero-title" data-en="AI & Vision Blog" data-fr="Blog IA & Vision">
+                        AI &amp; Vision Blog
+                    </h1>
+                    <p class="blog-hero-subtitle" data-en="Deep dives into computer vision, deep learning, and thermal imaging." data-fr="Explorations en vision par ordinateur, deep learning et imagerie thermique.">
+                        Deep dives into computer vision, deep learning, and thermal imaging.
+                    </p>
+                    <!-- Search bar in hero -->
+                    <div class="blog-hero-search">
+                        <div class="blog-search-wrap">
+                            <i class="fas fa-search blog-search-icon"></i>
+                            <input type="text" id="blog-search-input" class="blog-search-field" placeholder="Search articles..." aria-label="Search articles">
+                            <button class="blog-search-btn" id="blog-search-btn" aria-label="Search">Search</button>
                         </div>
-                        <div class="col-lg-5 d-flex align-items-center">
-                            <div class="card-body p-4 p-lg-5">
-                                <span class="badge bg-danger mb-3" data-en="Featured" data-fr="À la Une">Featured</span>
-                                <h2 class="card-title h1 mb-4" data-en="The Future of Thermal Imaging in AI" data-fr="L'Avenir de l'Imagerie Thermique en IA">The Future of Thermal Imaging in AI</h2>
-                                <p class="card-text mb-4 text-light-50" data-en="How multimodal sensors are changing the landscape of autonomous security and surveillance systems." data-fr="Comment les capteurs multimodaux changent le paysage de la sécurité et de la surveillance autonomes.">How multimodal sensors are changing the landscape of autonomous security and surveillance systems.</p>
-                                <div class="d-flex align-items-center mb-4 small">
-                                    <img src="../images/profile-marnissi.webp" class="rounded-circle me-2" width="30" height="30" alt="Author">
-                                    <span class="me-3">Amine Marnissi</span>
-                                    <span class="text-muted"><i class="far fa-clock me-1"></i> 8 min read</span>
-                                </div>
-                                <a href="posts/thermal_enhancement.html" class="btn btn-primary btn-lg px-4" data-en="Read Full Article" data-fr="Lire l'Article">Read Full Article</a>
-                            </div>
+                    </div>
+                    <!-- Stats strip -->
+                    <div class="blog-hero-stats">
+                        <div class="blog-stat-item">
+                            <span class="blog-stat-num">12+</span>
+                            <span class="blog-stat-label" data-en="Articles" data-fr="Articles">Articles</span>
+                        </div>
+                        <div class="blog-stat-divider"></div>
+                        <div class="blog-stat-item">
+                            <span class="blog-stat-num">4</span>
+                            <span class="blog-stat-label" data-en="Topics" data-fr="Sujets">Topics</span>
+                        </div>
+                        <div class="blog-stat-divider"></div>
+                        <div class="blog-stat-item">
+                            <span class="blog-stat-num">2025</span>
+                            <span class="blog-stat-label" data-en="Latest" data-fr="Dernier">Latest</span>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <div class="row g-5">
-                <!-- Main Posts Column -->
-                <div class="col-lg-8">
-                    <section id="blog-posts">
-                        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
-                            <h3 class="fw-bold" data-en="Recent Articles" data-fr="Articles Récents">Recent Articles</h3>
-                            <div class="btn-group btn-group-sm">
-                                <button class="btn btn-outline-secondary active">All</button>
-                                <button class="btn btn-outline-secondary">Computer Vision</button>
-                                <button class="btn btn-outline-secondary">Deep Learning</button>
+        <!-- ===== FEATURED POST ===== -->
+        <section class="blog-featured-section">
+            <div class="container">
+                <div class="blog-section-header">
+                    <span class="blog-section-tag"><i class="fas fa-star me-1"></i> <span data-en="Featured" data-fr="À la Une">Featured</span></span>
+                    <h2 class="blog-section-title" data-en="Editor's Pick" data-fr="Sélection de l'Éditeur">Editor's Pick</h2>
+                </div>
+
+                <a href="posts/thermal_enhancement.html" class="featured-card-link">
+                    <article class="featured-blog-card">
+                        <div class="featured-blog-img">
+                            <img src="../images/pages/paper.webp" alt="The Future of Thermal Imaging in AI" loading="lazy">
+                            <div class="featured-img-overlay">
+                                <span class="featured-badge" data-en="Featured" data-fr="À la Une">
+                                    <i class="fas fa-fire me-1"></i>Featured
+                                </span>
+                            </div>
+                        </div>
+                        <div class="featured-blog-body">
+                            <div class="post-meta-row">
+                                <span class="post-category cat-ai">AI Research</span>
+                                <span class="post-date"><i class="far fa-calendar-alt me-1"></i>Dec 15, 2025</span>
+                                <span class="post-read"><i class="far fa-clock me-1"></i>8 min read</span>
+                            </div>
+                            <h2 class="featured-blog-title" data-en="The Future of Thermal Imaging in AI" data-fr="L'Avenir de l'Imagerie Thermique en IA">
+                                The Future of Thermal Imaging in AI
+                            </h2>
+                            <p class="featured-blog-excerpt" data-en="How multimodal sensors are changing the landscape of autonomous security and surveillance systems — from edge deployment on Jetson platforms to GAN-based enhancement pipelines." data-fr="Comment les capteurs multimodaux changent le paysage de la sécurité et de la surveillance autonomes.">
+                                How multimodal sensors are changing the landscape of autonomous security and surveillance systems — from edge deployment on Jetson platforms to GAN-based enhancement pipelines.
+                            </p>
+                            <div class="featured-blog-footer">
+                                <div class="post-author">
+                                    <img src="../images/profile-marnissi.webp" alt="Amine Marnissi" class="post-author-avatar">
+                                    <div>
+                                        <div class="post-author-name">Amine Marnissi</div>
+                                        <div class="post-author-role" data-en="Computer Vision Researcher" data-fr="Chercheur Vision par Ordinateur">Computer Vision Researcher</div>
+                                    </div>
+                                </div>
+                                <span class="featured-read-btn" data-en="Read Article" data-fr="Lire l'Article">
+                                    Read Article <i class="fas fa-arrow-right ms-1"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <section class="blog-main-section">
+            <div class="container">
+                <div class="row g-5">
+
+                    <!-- Posts Column -->
+                    <div class="col-lg-8">
+                        <!-- Filter Tabs -->
+                        <div class="blog-filter-bar">
+                            <h3 class="blog-filter-title" data-en="Recent Articles" data-fr="Articles Récents">Recent Articles</h3>
+                            <div class="blog-filter-tabs" id="filter-tabs" role="tablist">
+                                <button class="blog-filter-tab active" data-filter="all" role="tab" data-en="All" data-fr="Tous">All</button>
+                                <button class="blog-filter-tab" data-filter="ai-research" role="tab" data-en="AI Research" data-fr="Recherche IA">AI Research</button>
+                                <button class="blog-filter-tab" data-filter="tutorial" role="tab" data-en="Tutorial" data-fr="Tutoriel">Tutorial</button>
+                                <button class="blog-filter-tab" data-filter="project" role="tab" data-en="Project" data-fr="Projet">Project</button>
                             </div>
                         </div>
 
-                        <div class="row g-4">
+                        <!-- Posts Grid -->
+                        <div class="blog-posts-grid" id="blog-posts-grid">
+
                             <!-- Post 1 -->
-                            <div class="col-md-12">
-                                <div class="card h-100 blog-list-card border-0 shadow-sm overflow-hidden">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="../images/pages/vc_gan.webp" class="img-fluid h-100 w-100" alt="Post Image" style="object-fit: cover; min-height: 200px;">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body p-4">
-                                                <div class="mb-2">
-                                                    <span class="badge bg-primary-fade text-primary mb-0">AI Research</span>
-                                                    <span class="text-muted small ms-2"><i class="far fa-calendar-alt me-1"></i> Dec 8, 2025</span>
-                                                </div>
-                                                <h4 class="card-title fw-bold" data-en="Understanding Thermal Image Enhancement" data-fr="Comprendre l'Amélioration des Images Thermiques">Understanding Thermal Image Enhancement</h4>
-                                                <p class="card-text text-muted" data-en="A deep dive into how GANs can be used to improve the quality of thermal imagery for better object detection." data-fr="Une plongée profonde dans la façon dont les GAN peuvent être utilisés pour améliorer la qualité de l'imagerie thermique.">A deep dive into how GANs can be used to improve the quality of thermal imagery for better object detection.</p>
-                                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                                    <a href="posts/thermal_enhancement.html" class="btn btn-link p-0 text-decoration-none fw-bold" data-en="Read More →" data-fr="Lire la suite →">Read More →</a>
-                                                    <span class="small text-muted"><i class="far fa-clock me-1"></i> 5 min read</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <article class="blog-post-card" data-category="ai-research" data-aos="fade-up">
+                                <a href="posts/thermal_enhancement.html" class="blog-post-card-link">
+                                    <div class="blog-post-img">
+                                        <img src="../images/pages/vc_gan.webp" alt="Thermal Image Enhancement" loading="lazy">
+                                        <span class="post-category-badge cat-ai">AI Research</span>
                                     </div>
-                                </div>
-                            </div>
+                                    <div class="blog-post-body">
+                                        <div class="post-meta-row">
+                                            <span class="post-date"><i class="far fa-calendar-alt me-1"></i>Dec 8, 2025</span>
+                                            <span class="post-read"><i class="far fa-clock me-1"></i>5 min</span>
+                                        </div>
+                                        <h3 class="blog-post-title" data-en="Understanding Thermal Image Enhancement" data-fr="Comprendre l'Amélioration des Images Thermiques">
+                                            Understanding Thermal Image Enhancement
+                                        </h3>
+                                        <p class="blog-post-excerpt" data-en="A deep dive into how GANs can be used to improve the quality of thermal imagery for better object detection." data-fr="Une plongée dans la façon dont les GAN améliorent l'imagerie thermique.">
+                                            A deep dive into how GANs can be used to improve the quality of thermal imagery for better object detection.
+                                        </p>
+                                        <div class="blog-post-tags">
+                                            <span class="post-tag">PyTorch</span>
+                                            <span class="post-tag">GAN</span>
+                                            <span class="post-tag">Thermal</span>
+                                        </div>
+                                        <span class="blog-post-cta" data-en="Read Article" data-fr="Lire l'Article">
+                                            Read Article <i class="fas fa-arrow-right ms-1"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </article>
 
                             <!-- Post 2 -->
-                            <div class="col-md-12">
-                                <div class="card h-100 blog-list-card border-0 shadow-sm overflow-hidden">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="../images/pages/visapp.webp" class="img-fluid h-100 w-100" alt="Post Image" style="object-fit: cover; min-height: 200px;">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body p-4">
-                                                <div class="mb-2">
-                                                    <span class="badge bg-success-fade text-success mb-0">Tutorial</span>
-                                                    <span class="text-muted small ms-2"><i class="far fa-calendar-alt me-1"></i> Nov 15, 2025</span>
-                                                </div>
-                                                <h4 class="card-title fw-bold" data-en="Getting Started with Computer Vision" data-fr="Débuter avec la Vision par Ordinateur">Getting Started with Computer Vision</h4>
-                                                <p class="card-text text-muted" data-en="Essential tools and libraries you need to start your journey in computer vision using Python and OpenCV." data-fr="Outils et bibliothèques essentiels pour commencer votre parcours en vision par ordinateur.">Essential tools and libraries you need to start your journey in computer vision using Python and OpenCV.</p>
-                                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                                    <a href="#" class="btn btn-link p-0 text-decoration-none fw-bold" data-en="Read More →" data-fr="Lire la suite →">Read More →</a>
-                                                    <span class="small text-muted"><i class="far fa-clock me-1"></i> 10 min read</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <article class="blog-post-card" data-category="tutorial" data-aos="fade-up" data-aos-delay="100">
+                                <a href="#" class="blog-post-card-link">
+                                    <div class="blog-post-img">
+                                        <img src="../images/pages/visapp.webp" alt="Getting Started with Computer Vision" loading="lazy">
+                                        <span class="post-category-badge cat-tutorial">Tutorial</span>
                                     </div>
-                                </div>
-                            </div>
+                                    <div class="blog-post-body">
+                                        <div class="post-meta-row">
+                                            <span class="post-date"><i class="far fa-calendar-alt me-1"></i>Nov 15, 2025</span>
+                                            <span class="post-read"><i class="far fa-clock me-1"></i>10 min</span>
+                                        </div>
+                                        <h3 class="blog-post-title" data-en="Getting Started with Computer Vision" data-fr="Débuter avec la Vision par Ordinateur">
+                                            Getting Started with Computer Vision
+                                        </h3>
+                                        <p class="blog-post-excerpt" data-en="Essential tools and libraries you need to start your journey in computer vision using Python and OpenCV." data-fr="Outils et bibliothèques essentiels pour commencer en vision par ordinateur.">
+                                            Essential tools and libraries you need to start your journey in computer vision using Python and OpenCV.
+                                        </p>
+                                        <div class="blog-post-tags">
+                                            <span class="post-tag">Python</span>
+                                            <span class="post-tag">OpenCV</span>
+                                            <span class="post-tag">Beginner</span>
+                                        </div>
+                                        <span class="blog-post-cta" data-en="Read Article" data-fr="Lire l'Article">
+                                            Read Article <i class="fas fa-arrow-right ms-1"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </article>
 
                             <!-- Post 3 -->
-                            <div class="col-md-12">
-                                <div class="card h-100 blog-list-card border-0 shadow-sm overflow-hidden">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="../images/pages/vc_detection.webp" class="img-fluid h-100 w-100" alt="Post Image" style="object-fit: cover; min-height: 200px;">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body p-4">
-                                                <div class="mb-2">
-                                                    <span class="badge bg-info-fade text-info mb-0">Project</span>
-                                                    <span class="text-muted small ms-2"><i class="far fa-calendar-alt me-1"></i> Oct 22, 2025</span>
-                                                </div>
-                                                <h4 class="card-title fw-bold" data-en="Real-time Object Detection on Jetson" data-fr="Détection d'Objets Temps Réel sur Jetson">Real-time Object Detection on Jetson</h4>
-                                                <p class="card-text text-muted" data-en="Optimizing YOLO models for edge devices like NVIDIA Jetson Nano to achieve high FPS in thermal feeds." data-fr="Optimisation des modèles YOLO pour les périphériques Edge comme NVIDIA Jetson Nano.">Optimizing YOLO models for edge devices like NVIDIA Jetson Nano to achieve high FPS in thermal feeds.</p>
-                                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                                    <a href="#" class="btn btn-link p-0 text-decoration-none fw-bold" data-en="Read More →" data-fr="Lire la suite →">Read More →</a>
-                                                    <span class="small text-muted"><i class="far fa-clock me-1"></i> 7 min read</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <article class="blog-post-card" data-category="project" data-aos="fade-up" data-aos-delay="200">
+                                <a href="#" class="blog-post-card-link">
+                                    <div class="blog-post-img">
+                                        <img src="../images/pages/vc_detection.webp" alt="Real-time Object Detection on Jetson" loading="lazy">
+                                        <span class="post-category-badge cat-project">Project</span>
                                     </div>
-                                </div>
-                            </div>
+                                    <div class="blog-post-body">
+                                        <div class="post-meta-row">
+                                            <span class="post-date"><i class="far fa-calendar-alt me-1"></i>Oct 22, 2025</span>
+                                            <span class="post-read"><i class="far fa-clock me-1"></i>7 min</span>
+                                        </div>
+                                        <h3 class="blog-post-title" data-en="Real-time Object Detection on Jetson" data-fr="Détection d'Objets Temps Réel sur Jetson">
+                                            Real-time Object Detection on Jetson
+                                        </h3>
+                                        <p class="blog-post-excerpt" data-en="Optimizing YOLO models for edge devices like NVIDIA Jetson Nano to achieve high FPS in thermal feeds." data-fr="Optimisation des modèles YOLO pour les périphériques Edge comme NVIDIA Jetson Nano.">
+                                            Optimizing YOLO models for edge devices like NVIDIA Jetson Nano to achieve high FPS in thermal feeds.
+                                        </p>
+                                        <div class="blog-post-tags">
+                                            <span class="post-tag">YOLO</span>
+                                            <span class="post-tag">Jetson</span>
+                                            <span class="post-tag">Edge AI</span>
+                                        </div>
+                                        <span class="blog-post-cta" data-en="Read Article" data-fr="Lire l'Article">
+                                            Read Article <i class="fas fa-arrow-right ms-1"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <!-- Post 4 -->
+                            <article class="blog-post-card" data-category="ai-research" data-aos="fade-up">
+                                <a href="#" class="blog-post-card-link">
+                                    <div class="blog-post-img">
+                                        <img src="../images/pages/gradcam.webp" alt="Explainability in Deep Learning" loading="lazy">
+                                        <span class="post-category-badge cat-ai">AI Research</span>
+                                    </div>
+                                    <div class="blog-post-body">
+                                        <div class="post-meta-row">
+                                            <span class="post-date"><i class="far fa-calendar-alt me-1"></i>Sep 10, 2025</span>
+                                            <span class="post-read"><i class="far fa-clock me-1"></i>6 min</span>
+                                        </div>
+                                        <h3 class="blog-post-title" data-en="Explainability with Grad-CAM in CNNs" data-fr="Explicabilité avec Grad-CAM dans les CNN">
+                                            Explainability with Grad-CAM in CNNs
+                                        </h3>
+                                        <p class="blog-post-excerpt" data-en="How Gradient-weighted Class Activation Mapping helps us understand what deep neural networks really see inside images." data-fr="Comment Grad-CAM aide à comprendre ce que voient les réseaux profonds.">
+                                            How Gradient-weighted Class Activation Mapping helps us understand what deep neural networks really see inside images.
+                                        </p>
+                                        <div class="blog-post-tags">
+                                            <span class="post-tag">Grad-CAM</span>
+                                            <span class="post-tag">XAI</span>
+                                            <span class="post-tag">CNN</span>
+                                        </div>
+                                        <span class="blog-post-cta" data-en="Read Article" data-fr="Lire l'Article">
+                                            Read Article <i class="fas fa-arrow-right ms-1"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </article>
+
+                        </div>
+
+                        <!-- No results message -->
+                        <div class="blog-no-results d-none" id="blog-no-results">
+                            <i class="fas fa-search"></i>
+                            <p data-en="No articles found matching your search." data-fr="Aucun article trouvé.">No articles found matching your search.</p>
                         </div>
 
                         <!-- Pagination -->
-                        <nav aria-label="Page navigation" class="mt-5">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        <nav aria-label="Page navigation" class="blog-pagination-wrap">
+                            <ul class="blog-pagination">
+                                <li class="blog-page-item disabled">
+                                    <a class="blog-page-link" href="#"><i class="fas fa-chevron-left"></i></a>
+                                </li>
+                                <li class="blog-page-item active"><a class="blog-page-link" href="#">1</a></li>
+                                <li class="blog-page-item"><a class="blog-page-link" href="#">2</a></li>
+                                <li class="blog-page-item"><a class="blog-page-link" href="#">3</a></li>
+                                <li class="blog-page-item">
+                                    <a class="blog-page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                                </li>
                             </ul>
                         </nav>
-                    </section>
-                </div>
+                    </div>
 
-                <!-- Sidebar Column -->
-                <div class="col-lg-4">
-                    <aside class="blog-sidebar">
-                        <!-- Search Widget -->
-                        <div class="card border-0 shadow-sm mb-4 p-4">
-                            <h5 class="fw-bold mb-3" data-en="Search" data-fr="Recherche">Search</h5>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search articles..." aria-label="Search">
-                                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                            </div>
-                        </div>
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <aside class="blog-sidebar">
 
-                        <!-- Categories Widget -->
-                        <div class="card border-0 shadow-sm mb-4 p-4">
-                            <h5 class="fw-bold mb-3" data-en="Categories" data-fr="Catégories">Categories</h5>
-                            <ul class="list-unstyled mb-0 sidebar-list">
-                                <li class="mb-2"><a href="#" class="text-decoration-none d-flex justify-content-between align-items-center">Computer Vision <span class="badge bg-light text-dark rounded-pill">12</span></a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none d-flex justify-content-between align-items-center">Deep Learning <span class="badge bg-light text-dark rounded-pill">8</span></a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none d-flex justify-content-between align-items-center">Thermal Imaging <span class="badge bg-light text-dark rounded-pill">5</span></a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none d-flex justify-content-between align-items-center">Robotics <span class="badge bg-light text-dark rounded-pill">3</span></a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Newsletter Widget -->
-                        <div class="card border-0 shadow-sm mb-4 p-4 bg-primary text-white">
-                            <h5 class="fw-bold mb-3" data-en="Newsletter" data-fr="Newsletter">Newsletter</h5>
-                            <p class="small mb-3" data-en="Get the latest AI research insights directly in your inbox." data-fr="Recevez les dernières recherches en IA directement dans votre boîte mail.">Get the latest AI research insights directly in your inbox.</p>
-                            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                                <div class="mb-3">
-                                    <input type="email" class="form-control form-control-sm" placeholder="Your email..." required>
+                            <!-- About Widget -->
+                            <div class="sidebar-widget sidebar-about">
+                                <img src="../images/profile-marnissi.webp" alt="Amine Marnissi" class="sidebar-avatar">
+                                <h5 class="sidebar-about-name">Amine Marnissi</h5>
+                                <p class="sidebar-about-bio" data-en="Computer Vision & AI Researcher sharing insights on deep learning, thermal imaging, and edge AI deployment." data-fr="Chercheur en Vision par Ordinateur partageant ses connaissances sur le deep learning et l'imagerie thermique.">
+                                    Computer Vision & AI Researcher sharing insights on deep learning, thermal imaging, and edge AI deployment.
+                                </p>
+                                <div class="sidebar-social">
+                                    <a href="#" aria-label="GitHub" class="sidebar-social-btn"><i class="fab fa-github"></i></a>
+                                    <a href="#" aria-label="LinkedIn" class="sidebar-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" aria-label="Google Scholar" class="sidebar-social-btn"><i class="fas fa-graduation-cap"></i></a>
                                 </div>
-                                <button type="submit" class="btn btn-light btn-sm w-100 fw-bold text-primary" data-en="Subscribe" data-fr="S'abonner">Subscribe Now</button>
-                            </form>
-                        </div>
-
-                        <!-- Tags Widget -->
-                        <div class="card border-0 shadow-sm mb-4 p-4">
-                            <h5 class="fw-bold mb-3" data-en="Popular Tags" data-fr="Tags Populaires">Popular Tags</h5>
-                            <div class="d-flex flex-wrap gap-2">
-                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 px-3">PyTorch</a>
-                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 px-3">GAN</a>
-                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 px-3">YOLO</a>
-                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 px-3">Transformers</a>
-                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 px-3">OpenCV</a>
-                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 px-3">Jetson Nano</a>
                             </div>
-                        </div>
-                    </aside>
+
+                            <!-- Categories Widget -->
+                            <div class="sidebar-widget">
+                                <div class="sidebar-widget-header">
+                                    <i class="fas fa-folder-open me-2"></i>
+                                    <h5 data-en="Categories" data-fr="Catégories">Categories</h5>
+                                </div>
+                                <ul class="sidebar-categories">
+                                    <li>
+                                        <a href="#" class="sidebar-cat-link" data-filter="ai-research">
+                                            <span class="sidebar-cat-dot cat-ai"></span>
+                                            <span data-en="AI Research" data-fr="Recherche IA">AI Research</span>
+                                            <span class="sidebar-cat-count">6</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="sidebar-cat-link" data-filter="tutorial">
+                                            <span class="sidebar-cat-dot cat-tutorial"></span>
+                                            <span data-en="Tutorials" data-fr="Tutoriels">Tutorials</span>
+                                            <span class="sidebar-cat-count">4</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="sidebar-cat-link" data-filter="project">
+                                            <span class="sidebar-cat-dot cat-project"></span>
+                                            <span data-en="Projects" data-fr="Projets">Projects</span>
+                                            <span class="sidebar-cat-count">3</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Newsletter Widget -->
+                            <div class="sidebar-widget sidebar-newsletter">
+                                <div class="sidebar-newsletter-icon">
+                                    <i class="fas fa-envelope-open-text"></i>
+                                </div>
+                                <h5 data-en="Stay Updated" data-fr="Restez Informé">Stay Updated</h5>
+                                <p data-en="Get the latest AI research insights directly in your inbox." data-fr="Recevez les dernières recherches en IA dans votre boîte mail.">
+                                    Get the latest AI research insights directly in your inbox.
+                                </p>
+                                <form class="sidebar-newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                                    <input type="email" class="sidebar-email-input" placeholder="your@email.com" required>
+                                    <button type="submit" class="sidebar-subscribe-btn" data-en="Subscribe" data-fr="S'abonner">
+                                        Subscribe <i class="fas fa-paper-plane ms-1"></i>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- Popular Tags Widget -->
+                            <div class="sidebar-widget">
+                                <div class="sidebar-widget-header">
+                                    <i class="fas fa-tags me-2"></i>
+                                    <h5 data-en="Popular Tags" data-fr="Tags Populaires">Popular Tags</h5>
+                                </div>
+                                <div class="sidebar-tags">
+                                    <a href="#" class="sidebar-tag">PyTorch</a>
+                                    <a href="#" class="sidebar-tag">GAN</a>
+                                    <a href="#" class="sidebar-tag">YOLO</a>
+                                    <a href="#" class="sidebar-tag">Transformers</a>
+                                    <a href="#" class="sidebar-tag">OpenCV</a>
+                                    <a href="#" class="sidebar-tag">Jetson Nano</a>
+                                    <a href="#" class="sidebar-tag">Grad-CAM</a>
+                                    <a href="#" class="sidebar-tag">Deep Learning</a>
+                                </div>
+                            </div>
+
+                        </aside>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="text-center py-4 bg-dark text-white">
         <div class="container">
             <p class="mb-0" data-en="&copy; 2025 Mohamed Amine Marnissi" data-fr="&copy; 2025 Mohamed Amine Marnissi">
                 &copy; 2025 Mohamed Amine Marnissi</p>
-            <p class="small mb-0" data-en="Computer Vision & AI Researcher"
-                data-fr="Chercheur en Vision par Ordinateur & IA">Computer Vision & AI Researcher</p>
+            <p class="small mb-0" data-en="Computer Vision & AI Researcher" data-fr="Chercheur en Vision par Ordinateur & IA">Computer Vision & AI Researcher</p>
         </div>
     </footer>
 
@@ -316,9 +451,9 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../source/main.js" defer></script>
+    <script src="../source/blog.js" defer></script>
 </body>
 
 </html>
